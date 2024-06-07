@@ -15,6 +15,10 @@ class IsUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if (auth()->user()->role == 'user') {
+            return $next($request);
+        }
+
+        return redirect('/admin/login')->with('fail', 'Anda tidak memiliki akses');
     }
 }

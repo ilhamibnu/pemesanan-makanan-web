@@ -22,33 +22,40 @@ use App\Http\Controllers\TransaksiController;
 
 #################### ADMIN ####################
 
-
 # Auth
 Route::get('/admin/login', [AuthController::class, 'login']);
 Route::post('/admin/postlogin', [AuthController::class, 'postlogin']);
 Route::get('/admin/logout', [AuthController::class, 'logout']);
-Route::post('/admin/updateprofil', [AuthController::class, 'updateprofil']);
 
-# Dashboard
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::group(['middleware' => ['IsAdmin']], function () {
 
-# User
-Route::get('/admin/user', [UserController::class, 'index']);
-Route::post('/admin/user/store', [UserController::class, 'store']);
-Route::post('/admin/user/update/{id}', [UserController::class, 'edit']);
-Route::get('/admin/user/delete/{id}', [UserController::class, 'destroy']);
+    # Auth After Login
+    Route::post('/admin/updateprofil', [AuthController::class, 'updateprofil']);
 
-# Product
-Route::get('/admin/product', [ProductController::class, 'index']);
-Route::post('/admin/product/store', [ProductController::class, 'store']);
-Route::post('/admin/product/update/{id}', [ProductController::class, 'edit']);
-Route::get('/admin/product/delete/{id}', [ProductController::class, 'destroy']);
+    # Dashboard
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
-# Kategori
-Route::get('/admin/kategori', [KategoriController::class, 'index']);
-Route::post('/admin/kategori/store', [KategoriController::class, 'store']);
-Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'edit']);
-Route::get('/admin/kategori/delete/{id}', [KategoriController::class, 'destroy']);
+    # User
+    Route::get('/admin/user', [UserController::class, 'index']);
+    Route::post('/admin/user/store', [UserController::class, 'store']);
+    Route::post('/admin/user/update/{id}', [UserController::class, 'edit']);
+    Route::get('/admin/user/delete/{id}', [UserController::class, 'destroy']);
 
-# Transaksi
-Route::get('/admin/transaksi', [TransaksiController::class, 'index']);
+    # Product
+    Route::get('/admin/product', [ProductController::class, 'index']);
+    Route::post('/admin/product/store', [ProductController::class, 'store']);
+    Route::post('/admin/product/update/{id}', [ProductController::class, 'edit']);
+    Route::get('/admin/product/delete/{id}', [ProductController::class, 'destroy']);
+
+    # Kategori
+    Route::get('/admin/kategori', [KategoriController::class, 'index']);
+    Route::post('/admin/kategori/store', [KategoriController::class, 'store']);
+    Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'edit']);
+    Route::get('/admin/kategori/delete/{id}', [KategoriController::class, 'destroy']);
+
+    # Transaksi
+    Route::get('/admin/transaksi', [TransaksiController::class, 'index']);
+});
+
+
+#################### USER ####################
