@@ -1,12 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+# Admin
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TransaksiController;
+
+# User
+use App\Http\Controllers\User\AuthController as UserAuthController;
+use App\Http\Controllers\User\LandingController;
+use App\Http\Controllers\User\DetailProductController;
+use App\Http\Controllers\User\CartController;
+use App\Http\Controllers\User\CheckoutController;
+use App\Http\Controllers\User\PemesananController;
+
 
 
 /*
@@ -59,3 +69,34 @@ Route::group(['middleware' => ['IsAdmin']], function () {
 
 
 #################### USER ####################
+
+# Auth
+Route::get('/user/login', [UserAuthController::class, 'login']);
+Route::post('/user/login', [UserAuthController::class, 'loginPost']);
+Route::get('/user/register', [UserAuthController::class, 'register']);
+Route::post('/user/register', [UserAuthController::class, 'registerPost']);
+Route::get('/user/logout', [UserAuthController::class, 'logout']);
+
+Route::group(['middleware' => ['IsUser']], function () {
+
+    # Auth After Login
+    Route::post('/user/updateprofil', [UserAuthController::class, 'updateprofil']);
+
+    # Landing
+    Route::get('/', [LandingController::class, 'index']);
+
+    # Detail Product
+    Route::get('/user/product/{id}', [DetailProductController::class, 'index']);
+
+    # Cart
+    Route::get('/user/cart', [CartController::class, 'index']);
+    Route::post('/user/cart/store', [CartController::class, 'store']);
+    Route::get('/user/cart/delete/{id}', [CartController::class, 'destroy']);
+
+    # Checkout
+    Route::get('/user/checkout', [CheckoutController::class, 'index']);
+    Route::post('/user/checkout/store', [CheckoutController::class, 'store']);
+
+    # Pemesanan
+    Route::get('/user/pemesanan', [PemesananController::class, 'index']);
+});

@@ -24,4 +24,14 @@ class Product extends Model
     {
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
     }
+
+    public function detailTransaksi()
+    {
+        return $this->hasMany(DetailTransaksi::class, 'id_product', 'id');
+    }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class, 'id_product', 'id');
+    }
 }
