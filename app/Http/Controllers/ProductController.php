@@ -13,7 +13,7 @@ class ProductController extends Controller
         $kategori = Kategori::all();
         $product = Product::with('kategori')->get();
         return view('admin.pages.product', [
-            'products' => $product,
+            'product' => $product,
             'kategori' => $kategori,
         ]);
     }

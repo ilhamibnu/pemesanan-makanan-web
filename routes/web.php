@@ -41,6 +41,8 @@ Route::group(['middleware' => ['IsAdmin']], function () {
 
     # Auth After Login
     Route::post('/admin/updateprofil', [AuthController::class, 'updateprofil']);
+    Route::get('/admin/profil', [AuthController::class, 'profil']);
+
 
     # Dashboard
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);

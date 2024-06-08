@@ -14,12 +14,12 @@ class DashboardController extends Controller
     {
         $total_transaksi = Transaksi::count();
         $total_user = User::where('role', 'user')->count();
-        $total_produk = Product::count();
+        $total_product = Product::count();
         $total_kategori = Kategori::count();
         return view('admin.pages.dashboard', [
             'total_transaksi' => $total_transaksi,
             'total_user' => $total_user,
-            'total_produk' => $total_produk,
+            'total_product' => $total_product,
             'total_kategori' => $total_kategori,
         ]);
     }
