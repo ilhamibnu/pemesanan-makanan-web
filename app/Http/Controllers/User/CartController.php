@@ -38,7 +38,7 @@ class CartController extends Controller
                 'total_harga' => $request->jumlah * $product->harga
             ]);
         }
-        return redirect('/user/cart')->with('success', 'Produk berhasil dimasukkan ke keranjang');
+        return redirect('/user/cart')->with('storecart', 'Produk berhasil dimasukkan ke keranjang');
     }
 
     public function update(Request $request)
@@ -58,14 +58,14 @@ class CartController extends Controller
             ]);
         }
 
-        return redirect('/user/cart')->with('success', 'Keranjang berhasil diupdate');
+        return redirect('/user/cart')->with('updatecart', 'Keranjang berhasil diupdate');
     }
 
     public function destroy($id)
     {
         $cart = Cart::find($id);
         $cart->delete();
-        return redirect('/user/cart')->with('success', 'Produk berhasil dihapus dari keranjang');
+        return redirect('/user/cart')->with('deletecart', 'Produk berhasil dihapus dari keranjang');
     }
 
 

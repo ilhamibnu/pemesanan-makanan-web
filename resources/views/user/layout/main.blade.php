@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from winsfolio.net/html/foodio/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 May 2024 17:01:29 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodio</title>
+    <title>Foodio @yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('user/assets/img/logo-icon.png') }}">
     <!-- CSS only -->
@@ -58,4 +57,91 @@
     <script type="text/javascript" src="{{ asset('user/assets/js/sweetalert.min.js') }}"></script>
 
     @yield('script')
+
+    @if(Session::get('login'))
+    <script>
+        swal("Berhasil!", "Anda Berhasil Login", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('loginerror'))
+    <script>
+        swal("Gagal!", "Email atau Password Salah", "error");
+
+    </script>
+    @endif
+
+    @if(Session::get('register'))
+    <script>
+        swal("Berhasil!", "Anda Berhasil Register", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('updateprofil'))
+    <script>
+        swal("Berhasil!", "Anda Berhasil Update Profil", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('logout'))
+    <script>
+        swal("Berhasil!", "Anda Berhasil Logout", "success");
+
+    </script>
+    @endif
+
+
+    @if(Session::get('linkkadaluarsa'))
+    <script>
+        swal("Gagal!", "Link Sudah Kadaluarsa", "error");
+
+    </script>
+    @endif
+
+    @if(Session::get('resetpasswordberhasil'))
+    <script>
+        swal("Berhasil!", "Password Berhasil Diubah", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('linkresetdikirim'))
+    <script>
+        swal("Berhasil!", "Link Reset Password Telah Dikirim Ke Email Anda", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('emailtidakditemukan'))
+    <script>
+        swal("Gagal!", "Email Tidak Ditemukan", "error");
+
+    </script>
+    @endif
+
+    @if(Session::get('storecart'))
+    <script>
+        swal("Berhasil!", "Produk Berhasil Ditambahkan Ke Keranjang", "success");
+
+    </script>
+    @endif
+
+
+    @if(Session::get('updatecart'))
+    <script>
+        swal("Berhasil!", "Keranjang Berhasil Diupdate", "success");
+
+    </script>
+    @endif
+
+    @if(Session::get('deletecart'))
+    <script>
+        swal("Berhasil!", "Produk Berhasil Dihapus Dari Keranjang", "success");
+
+    </script>
+    @endif
+
 </body>

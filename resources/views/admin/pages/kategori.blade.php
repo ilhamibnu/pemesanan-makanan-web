@@ -64,7 +64,7 @@
                                                 <h5 class="modal-title">Edit</h5>
                                                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <form action="/admin/kategori/update/{{ $data->id }}}">
+                                            <form action="/admin/kategori/update/{{ $data->id }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="modal-body">

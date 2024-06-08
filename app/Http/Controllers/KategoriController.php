@@ -50,7 +50,7 @@ class KategoriController extends Controller
         // cek apakah kategori ini memiliki produk
         $kategori = Kategori::find($id);
         if ($kategori->product->count() > 0) {
-            return redirect('/admin/kategori')->with('fail', 'Kategori ini memiliki produk');
+            return redirect('/admin/kategori')->with('kategori-product', 'Kategori ini memiliki produk');
         }
 
         Kategori::destroy($id);

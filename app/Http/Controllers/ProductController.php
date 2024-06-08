@@ -112,13 +112,13 @@ class ProductController extends Controller
     {
         // cek apakah produk ini memiliki transaksi
         $product = Product::find($id);
-        if ($product->transaksi->count() > 0) {
-            return redirect('/admin/product')->with('error', 'Produk ini memiliki transaksi');
+        if ($product->detailTransaksi->count() > 0) {
+            return redirect('/admin/product')->with('product-transaksi', 'Produk ini ada di transaksi');
         }
 
         // cek apakah produk ini memiliki cart
         if ($product->cart->count() > 0) {
-            return redirect('/admin/product')->with('error', 'Produk ini ada di cart');
+            return redirect('/admin/product')->with('product-cart', 'Produk ini ada di cart');
         }
 
         // hapus gambar

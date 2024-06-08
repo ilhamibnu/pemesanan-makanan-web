@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from laravel.pixelstrap.com/viho/login by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Feb 2024 08:31:53 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -166,6 +164,4 @@
 
 
 </body>
-
-<!-- Mirrored from laravel.pixelstrap.com/viho/login by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Feb 2024 08:31:53 GMT -->
 </html>

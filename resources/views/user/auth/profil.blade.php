@@ -1,12 +1,12 @@
 @extends('user.layout.main')
-@section('title' , ' - Login')
+@section('title' , ' - Profil')
 @section('content')
 <section class="banner" style="background-image:url(assets/img/background.png)">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="title-area-data">
-                    <h2>Login</h2>
+                    <h2>Profil</h2>
                     <p>A magical combination that sent aromas to the taste buds</p>
                 </div>
                 <ol class="breadcrumb">
@@ -56,36 +56,13 @@
                         @endforeach
                     </div>
                     @endif
-
-                    <form action="/user/login" method="POST">
+                    <form action="/user/updateprofil" method="POST">
                         @csrf
-                        <input type="email" name="email" placeholder="Username or email address" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <div class="remember">
-                            {{-- <div class="first">
-                                <input type="checkbox" name="checkbox" id="checkbox">
-                                <label for="checkbox">Remember me</label>
-                            </div> --}}
-                            <div class="second">
-                                <a href="/user/reset-password">Forget a Password?</a>
-                            </div>
-                        </div>
-                        <button type="submit" class="button">Login</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="box register">
-                    <div class="parallax" style="background-image: url({{ asset('user/assets/img/patron.jpg') }})"></div>
-                    <h3>Log In Your Account</h3>
-                    <form action="/user/register" method="POST">
-                        @csrf
-                        <input type="text" name="name" placeholder="Complete Name" required>
-                        <input type="email" name="email" placeholder="Username or email address" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <input type="password" name="repassword" placeholder="Password" required>
-                        <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
-                        <button type="submit" class="button">Register</button>
+                        <input type="text" name="name" value="{{ Auth::user()->name }}" placeholder="Name" required>
+                        <input type="email" name="email" value="{{ Auth::user()->email }}" placeholder="Username or email address" required>
+                        <input type="password" name="password" placeholder="Password">
+                        <input type="password" name="repassword" placeholder="Password">
+                        <button type="submit" class="button">Save</button>
                     </form>
                 </div>
             </div>

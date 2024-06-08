@@ -63,7 +63,7 @@
                                 @foreach ($product as $item)
                                 <tr>
                                     <td class="text-center">{{ $item->nama }}</td>
-                                    <td class="text-center"><img src="{{ asset('img/mobil/' . basename($item->gambar)) }}" alt="gambar" height="70px"></td>
+                                    <td class="text-center"><img src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="gambar" height="70px"></td>
                                     <td class="text-center">Rp. {{ number_format($item->harga, 0, ',', '.') }}</td>
                                     <td class="text-center">{{ $item->deskripsi }}</td>
                                     <td class="text-center">{{ $item->kategori->nama }}</td>
@@ -84,16 +84,15 @@
                                             </div>
                                             <form action="/admin/product/update/{{ $item->id }}" method="post" enctype="multipart/form-data">
                                                 @csrf
+                                                @method('PUT')
                                                 <div class="modal-body">
                                                     <div class="mb-3">
 
-                                                        <label class="col-form-label text-capitalize" for="nama">jenis
-                                                            Kendaraan:</label>
-                                                        <select class="form-select" name="jenis_kendaraan" id="jenis_kendaraan">
-                                                            <option value="motor" class="text-capitalize" {{ $item->jenis_kendaraan == 'motor' ? 'selected' : '' }}>
-                                                                motor</option>
-                                                            <option value="mobil" class="text-capitalize" {{ $item->jenis_kendaraan == 'mobil' ? 'selected' : '' }}>
-                                                                mobil</option>
+                                                        <label class="col-form-label text-capitalize" for="nama">Kategori</label>
+                                                        <select class="form-select" name="id_kategori" id="jenis_kendaraan">
+                                                            @foreach ($kategori as $data)
+                                                            <option value="{{ $data->id }}" class="text-capitalize" {{ $data->id == $item->id_kategori ? 'selected' : '' }}>{{ $data->nama }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                     <div class="mb-3">
@@ -117,8 +116,8 @@
                                                         <label for="foto" class="form-label">Masukkan
                                                             Foto</label>
                                                         <input type="hidden" name="oldImage" value="{{ $item->foto }}">
-                                                        @if ($item->foto)
-                                                        <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ asset('img/mobil/' . basename($item->gambar)) }}" alt="Preview Image">
+                                                        @if ($item->gambar)
+                                                        <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="Preview Image">
                                                         @else
                                                         <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">
                                                         @endif
@@ -180,6 +179,7 @@
                         </div>
                         <form action="/admin/product/store" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('POST')
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label class="col-form-label text-capitalize" for="jenis_kendaraan">Kategori</label>

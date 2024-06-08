@@ -50,20 +50,20 @@ Route::group(['middleware' => ['IsAdmin']], function () {
     # User
     Route::get('/admin/user', [UserController::class, 'index']);
     Route::post('/admin/user/store', [UserController::class, 'store']);
-    Route::post('/admin/user/update/{id}', [UserController::class, 'edit']);
-    Route::get('/admin/user/delete/{id}', [UserController::class, 'destroy']);
+    Route::put('/admin/user/update/{id}', [UserController::class, 'edit']);
+    Route::delete('/admin/user/delete/{id}', [UserController::class, 'destroy']);
 
     # Product
     Route::get('/admin/product', [ProductController::class, 'index']);
     Route::post('/admin/product/store', [ProductController::class, 'store']);
-    Route::post('/admin/product/update/{id}', [ProductController::class, 'edit']);
-    Route::get('/admin/product/delete/{id}', [ProductController::class, 'destroy']);
+    Route::put('/admin/product/update/{id}', [ProductController::class, 'edit']);
+    Route::delete('/admin/product/delete/{id}', [ProductController::class, 'destroy']);
 
     # Kategori
     Route::get('/admin/kategori', [KategoriController::class, 'index']);
     Route::post('/admin/kategori/store', [KategoriController::class, 'store']);
-    Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'edit']);
-    Route::get('/admin/kategori/delete/{id}', [KategoriController::class, 'destroy']);
+    Route::put('/admin/kategori/update/{id}', [KategoriController::class, 'edit']);
+    Route::delete('/admin/kategori/delete/{id}', [KategoriController::class, 'destroy']);
 
     # Transaksi
     Route::get('/admin/transaksi', [TransaksiController::class, 'index']);
@@ -97,6 +97,7 @@ Route::get('/user/product/{id}', [DetailProductController::class, 'index']);
 Route::group(['middleware' => ['IsUser']], function () {
 
     # Auth After Login
+    Route::get('/user/profil', [UserAuthController::class, 'profil']);
     Route::post('/user/updateprofil', [UserAuthController::class, 'updateprofil']);
 
     # Cart

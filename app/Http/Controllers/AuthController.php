@@ -69,6 +69,8 @@ class AuthController extends Controller
                 'email' => $request->email,
             ]);
         }
+
+        return redirect('/admin/profil')->with('update', 'Profil berhasil diubah');
     }
 
     public function profil()

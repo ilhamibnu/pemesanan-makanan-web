@@ -98,7 +98,7 @@ class UserController extends Controller
         }
 
         // cek apakah user ini memiliki transaksi
-        if ($user->transaction->count() > 0) {
+        if ($user->transaksi->count() > 0) {
             foreach ($user->transaksi as $transaction) {
                 $transaction->delete();
             }

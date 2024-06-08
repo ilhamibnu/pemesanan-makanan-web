@@ -35,10 +35,10 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials)) {
-            return redirect('/')->with('success', 'Login berhasil');
+            return redirect('/')->with('login', 'Login berhasil');
         }
 
-        return redirect()->back()->with('error', 'Email atau password salah');
+        return redirect()->back()->with('loginerror', 'Email atau password salah');
     }
 
     public function registerPost(Request $request)
@@ -66,7 +66,7 @@ class AuthController extends Controller
             'role' => 'user',
         ]);
 
-        return redirect('/user/login')->with('success', 'Registrasi berhasil, silahkan login');
+        return redirect('/user/login')->with('register', 'Registrasi berhasil, silahkan login');
     }
 
     public function updateprofil(Request $request)
@@ -93,25 +93,30 @@ class AuthController extends Controller
         }
         $user->save();
 
-        return redirect('/user/profil')->with('success', 'Profil berhasil diupdate');
+        return redirect('/user/profil')->with('updateprofil', 'Profil berhasil diupdate');
+    }
+
+    public function profil()
+    {
+        return view('user.auth.profil');
     }
 
     public function logout()
     {
         auth()->logout();
-        return redirect('/')->with('success', 'Logout berhasil');
+        return redirect('/')->with('logout', 'Logout berhasil');
     }
 
     public function linkresetpassword()
     {
-        return view('landing.auth.reset-password');
+        return view('user.auth.reset-password');
     }
 
     public function changepassword($code)
     {
         $user = User::where('code', $code)->where('status_code', 'aktif')->where('role', 'user')->first();
         if ($user) {
-            return view('landing.auth.change-password', [
+            return view('user.auth.change-password', [
                 'user' => $user,
             ]);
         } else {
