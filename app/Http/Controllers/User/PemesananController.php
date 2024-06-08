@@ -11,7 +11,7 @@ class PemesananController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::with('user', 'detailTransaksi')->where('id_user', auth()->user()->id)->get();
+        $transaksi = Transaksi::with('user', 'detailTransaksi')->where('id_user', auth()->user()->id)->get()->sortByDesc('id');
         return view('user.pages.pemesanan', [
             'transaksi' => $transaksi
         ]);

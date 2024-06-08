@@ -9,7 +9,7 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategori = Kategori::all();
+        $kategori = Kategori::all()->sortByDesc('id');
         return view('admin.pages.kategori', [
             'kategori' => $kategori,
         ]);

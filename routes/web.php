@@ -94,6 +94,7 @@ Route::post('/user/change-password', [UserAuthController::class, 'changepassword
 Route::get('/', [LandingController::class, 'index']);
 Route::get('/user/menu', [LandingController::class, 'menu']);
 Route::get('/user/shop', [LandingController::class, 'shop']);
+Route::get('/user/contact', [LandingController::class, 'contact']);
 
 
 # Detail Product

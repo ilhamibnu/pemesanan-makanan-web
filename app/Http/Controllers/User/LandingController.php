@@ -11,7 +11,7 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $product = Product::with('kategori')->get();
+        $product = Product::with('kategori')->get()->sortByDesc('id');
         return view('user.pages.index', [
             'product' => $product,
         ]);
@@ -19,7 +19,7 @@ class LandingController extends Controller
 
     public function menu()
     {
-        $product = Product::with('kategori')->get();
+        $product = Product::with('kategori')->get()->sortByDesc('id');
         return view('user.pages.menu', [
             'product' => $product,
         ]);
@@ -28,10 +28,15 @@ class LandingController extends Controller
     public function shop()
     {
         $kategori = Kategori::all();
-        $product = Product::with('kategori')->get();
+        $product = Product::with('kategori')->get()->sortByDesc('id');
         return view('user.pages.shop', [
             'product' => $product,
             'kategori' => $kategori,
         ]);
+    }
+
+    public function contact()
+    {
+        return view('user.pages.contact');
     }
 }

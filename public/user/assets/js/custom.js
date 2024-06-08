@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
         // autoplayTimeout:4000,
         items:1
       })
-/* 2. dishes */ 
+/* 2. dishes */
         $('.dishes').owlCarousel({
         loop:true,
         dot:false,
@@ -134,7 +134,7 @@ jQuery(document).ready(function($){
 
           jQuery(this).toggleClass('active');
 
-        }); 
+        });
 
         jQuery('#nav-icon4').click(function($){
 
@@ -162,7 +162,7 @@ jQuery(document).ready(function($){
            jQuery('#mobile-nav').removeClass('open');
 
         });
-  
+
 }) ;
 
 /* 8. Cart Popup Start */
@@ -191,15 +191,15 @@ jQuery(document).ready(function($){
           nextYear = yyyy + 1,
           dayMonth = "12/30/",
           birthday = dayMonth + yyyy;
-      
+
       today = mm + "/" + dd + "/" + yyyy;
       if (today > birthday) {
         birthday = dayMonth + nextYear;
       }
       //end
-      
+
       const countDown = new Date(birthday).getTime(),
-          x = setInterval(function() {    
+          x = setInterval(function() {
 
             const now = new Date().getTime(),
                   distance = countDown - now;
@@ -347,7 +347,7 @@ let calcScrollValue = () => {
   scrollProgress.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
   });
-  scrollProgress.style.background = `conic-gradient(#f3274c ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+  scrollProgress.style.background = `conic-gradient(#d2691e ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 };
 
 window.onscroll = calcScrollValue;
@@ -355,5 +355,5 @@ window.onload = calcScrollValue;
 
 
 
-/* 12. Preloader */ 
-        
+/* 12. Preloader */
+

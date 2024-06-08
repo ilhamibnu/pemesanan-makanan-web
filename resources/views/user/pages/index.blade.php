@@ -539,7 +539,7 @@
 </section>
 <section>
     <div class="container">
-        <div style="background-image: url({{ asset('user/assets/img/patron.jpg') }})" class="reserve-table">
+        <div style="background-color: #d2691e;" class="reserve-table">
             <div class="row">
                 <div class="col-xl-4">
                     <div class="reserve-table-text">
@@ -762,7 +762,7 @@
             </div>
             <div class="col-xl-6">
                 <div class="bratlee-img">
-                    <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="{{ asset('user/assets/img/bratlee-hamint-2.jpg') }}">
+                    <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
                     <img alt="bratlee-hamint" class="bratlee-hamint-1" src="{{ asset('user/assets/img/bratlee-hamint-1.jpg') }}">
                     <img alt="bratlee-hamin3" class="bratlee-hamint-3" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
                 </div>

@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        $cart = Cart::with('product')->where('id_user', auth()->user()->id)->get();
+        $cart = Cart::with('product')->where('id_user', auth()->user()->id)->get()->sortByDesc('id');
         $sum_cart = Cart::where('id_user', auth()->user()->id)->sum('total_harga');
         return view('user.pages.cart', [
             'cart' => $cart,

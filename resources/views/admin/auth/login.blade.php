@@ -11,7 +11,7 @@
     <meta name="author" content="pixelstrap" />
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-    <title>Login - RodaRent
+    <title>Login - Pemesanan Makanan
     </title>
     <!-- Google font-->
     <!-- Google font-->

@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        $product = Product::with('kategori')->get();
+        $product = Product::with('kategori')->get()->sortByDesc('id');
         return view('admin.pages.product', [
             'product' => $product,
             'kategori' => $kategori,
