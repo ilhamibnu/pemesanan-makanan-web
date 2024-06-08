@@ -14,7 +14,7 @@ class DetailProductController extends Controller
     {
         $product = Product::with('kategori')->find($id);
         $relateProduct = Product::where('id_kategori', $product->id_kategori)->where('id', '!=', $id)->get();
-        return view('user.pages.detail-product', [
+        return view('user.pages.product-detail', [
             'product' => $product,
             'relateProduct' => $relateProduct,
         ]);

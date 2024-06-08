@@ -83,25 +83,29 @@ Route::post('/user/reset-password', [UserAuthController::class, 'sendlinkresetpa
 Route::get('/user/change-password/{code}', [UserAuthController::class, 'changepassword']);
 Route::post('/user/change-password', [UserAuthController::class, 'changepasswordpost']);
 
+# Landing
+Route::get('/', [LandingController::class, 'index']);
+Route::get('/user/menu', [LandingController::class, 'menu']);
+Route::get('/user/shop', [LandingController::class, 'shop']);
+
+
+# Detail Product
+Route::get('/user/product/{id}', [DetailProductController::class, 'index']);
+
 Route::group(['middleware' => ['IsUser']], function () {
 
     # Auth After Login
     Route::post('/user/updateprofil', [UserAuthController::class, 'updateprofil']);
 
-    # Landing
-    Route::get('/', [LandingController::class, 'index']);
-
-    # Detail Product
-    Route::get('/user/product/{id}', [DetailProductController::class, 'index']);
-
     # Cart
     Route::get('/user/cart', [CartController::class, 'index']);
     Route::post('/user/cart/store', [CartController::class, 'store']);
-    Route::get('/user/cart/delete/{id}', [CartController::class, 'destroy']);
+    Route::post('/user/cart/update', [CartController::class, 'update']);
+    Route::delete('/user/cart/delete/{id}', [CartController::class, 'destroy']);
 
+    Route::post('/user/checkout', [CartController::class, 'checkout']);
     # Checkout
-    Route::get('/user/checkout', [CheckoutController::class, 'index']);
-    Route::post('/user/checkout/store', [CheckoutController::class, 'store']);
+    Route::get('/user/checkout/{id}', [CheckoutController::class, 'index']);
 
     # Pemesanan
     Route::get('/user/pemesanan', [PemesananController::class, 'index']);
