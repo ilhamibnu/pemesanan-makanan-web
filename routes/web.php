@@ -3,19 +3,20 @@
 use Illuminate\Support\Facades\Route;
 # Admin
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\DashboardController;
 
 # User
-use App\Http\Controllers\User\AuthController as UserAuthController;
-use App\Http\Controllers\User\LandingController;
-use App\Http\Controllers\User\DetailProductController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\User\CartController;
+use App\Http\Controllers\User\LandingController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\PemesananController;
+use App\Http\Controllers\User\DetailProductController;
+use App\Http\Controllers\User\AuthController as UserAuthController;
 
 
 
@@ -67,6 +68,10 @@ Route::group(['middleware' => ['IsAdmin']], function () {
 
     # Transaksi
     Route::get('/admin/transaksi', [TransaksiController::class, 'index']);
+
+    # Report
+    Route::get('/admin/report', [ReportController::class, 'index']);
+    Route::post('/admin/report/filter', [ReportController::class, 'filter']);
 });
 
 

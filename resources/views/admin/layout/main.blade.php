@@ -31,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/feather-icon.css') }}">
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/datatables.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/new/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/new/datatablesbutton.css') }}">
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/chartist.css') }}">
@@ -123,6 +125,16 @@
     <!-- Plugin used-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+
+
     <script>
         $(document).ready(function() {
             let colorTheme = false;
@@ -162,6 +174,8 @@
         });
 
     </script>
+
+    @yield('script')
 
     @if (Session::get('login'))
     <script>

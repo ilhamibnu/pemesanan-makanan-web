@@ -58,6 +58,10 @@
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav " href="/admin/user"><i data-feather="user"></i><span>Data User</span></a>
                     </li>
+
+                    <li class="dropdown">
+                        <a class="nav-link menu-title link-nav " href="/admin/report"><i data-feather="settings"></i><span>Report</span></a>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

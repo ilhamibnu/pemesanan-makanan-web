@@ -1,14 +1,14 @@
 @extends('admin.layout.main')
-@section('title', 'Data Transaksi - ')
+@section('title', 'Data Report - ')
 @section('content')
 <div class="container-fluid">
     <div class="page-header">
         <div class="row">
             <div class="col-lg-6">
-                <h3>Data Transaksi</h3>
+                <h3>Data Report</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                    <li class="breadcrumb-item active">Data Transaksi</li>
+                    <li class="breadcrumb-item active">Data Report</li>
                 </ol>
             </div>
             <div class="col-lg-6">
@@ -26,6 +26,40 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
+                    {{-- // filter date and status --}}
+                    <form action="/admin/report/filter" method="POST">
+                        @csrf
+
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" name="date1" class="form-control" id="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" name="date2" class="form-control" id="date">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select name="status" id="status" class="form-control">
+                                <option selected disabled>Pilih Status</option>
+                                <option value="Belum Pilih Pembayaran">Belum Pilih Pembayaran</option>
+                                <option value="pending">Pending</option>
+                                <option value="expired">Expired</option>
+                                <option value="paid">Paid</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary mt-4">Filter</button>
+                        </div>
+
+
+                    </form>
+                    {{-- // end filter date and status --}}
+
                     @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show mt-2">
 
