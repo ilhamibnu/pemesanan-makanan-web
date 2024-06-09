@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
+use Illuminate\Support\Facades\Session;
 
 
 class AuthController extends Controller
@@ -24,6 +25,9 @@ class AuthController extends Controller
 
     public function loginPost(Request $request)
     {
+        Session::flash('emailLogin', $request->email);
+        Session::flash('passwordLogin', $request->password);
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -43,6 +47,9 @@ class AuthController extends Controller
 
     public function registerPost(Request $request)
     {
+        Session::flash('nameRegister', $request->name);
+        Session::flash('emailRegister', $request->email);
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',

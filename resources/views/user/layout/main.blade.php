@@ -144,4 +144,10 @@
     </script>
     @endif
 
+    @if(Session::get('kosongcart'))
+    <script>
+        swal("Gagal!", "Keranjang Masih Kosong", "error");
+    </script>
+    @endif
+
 </body>

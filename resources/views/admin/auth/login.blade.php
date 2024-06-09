@@ -89,14 +89,14 @@
                                 <label>Email Address</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="icon-email"></i></span>
-                                    <input class="form-control" name="email" type="email" required="" placeholder="Test@gmail.com" />
+                                    <input class="form-control" name="email" value="{{ Session::get('emailLogin') }}" type="email" required="" placeholder="Test@gmail.com" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input name="password" class="form-control" type="password" name="login[password]" required="" placeholder="*********" />
+                                    <input name="password" class="form-control" value="{{ Session::get('passwordLogin') }}" type="password" name="password" required="" placeholder="*********" />
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
                             </div>

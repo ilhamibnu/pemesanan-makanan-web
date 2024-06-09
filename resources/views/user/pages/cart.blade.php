@@ -37,6 +37,22 @@
 </section>
 <section class="gap">
     <div class="container">
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+            <?php
+
+                $nomer = 1;
+
+                ?>
+
+            @foreach($errors->all() as $error)
+            <li>{{ $nomer++ }}. {{ $error }}</li>
+            @endforeach
+        </div>
+        @endif
         <form action="/user/cart/update" method="POST" class="woocommerce-cart-form">
             @csrf
             <div style="overflow-x:auto;overflow-y: hidden;">

@@ -23,6 +23,18 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'id_product' => 'required|exists:product,id',
+            'jumlah' => 'required|integer|min:1',
+        ],[
+            'id_product.required' => 'Produk tidak boleh kosong',
+            'id_product.exists' => 'Produk tidak ditemukan',
+            'jumlah.required' => 'Jumlah tidak boleh kosong',
+            'jumlah.integer' => 'Jumlah harus berupa angka',
+            'jumlah.min' => 'Jumlah minimal 1',
+
+        ]);
+
         $product = Product::find($request->id_product);
         $cart = Cart::where('id_user', auth()->user()->id)->where('id_product', $request->id_product)->first();
         if ($cart) {
@@ -43,10 +55,23 @@ class CartController extends Controller
 
     public function update(Request $request)
     {
+        // cek cart user
+        $cart = Cart::where('id_user', auth()->user()->id)->get();
+        if ($cart->count() == 0) {
+            return redirect('/user/cart')->with('kosongcart', 'Keranjang kosong');
+        }
+
         // Validasi data yang diterima dari form
         $request->validate([
             'items.*.id' => 'required|exists:cart,id',
             'items.*.jumlah' => 'required|integer|min:1',
+        ],[
+            'items.*.id.required' => 'Produk tidak boleh kosong',
+            'items.*.id.exists' => 'Produk tidak ditemukan',
+            'items.*.jumlah.required' => 'Jumlah tidak boleh kosong',
+            'items.*.jumlah.integer' => 'Jumlah harus berupa angka',
+            'items.*.jumlah.min' => 'Jumlah minimal 1',
+        
         ]);
 
         // Loop melalui item yang diterima dari form
@@ -72,6 +97,10 @@ class CartController extends Controller
     public function checkout()
     {
         $cart = Cart::where('id_user', auth()->user()->id)->get();
+        if ($cart->count() == 0) {
+            return redirect('/user/cart')->with('kosongcart', 'Keranjang kosong');
+        }
+
         $transaksi = new Transaksi();
         $transaksi->no_transaksi = 'TRX' . date('YmdHis');
         $transaksi->total_harga = $cart->sum('total_harga');

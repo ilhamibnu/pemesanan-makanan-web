@@ -81,6 +81,22 @@
                                 <button type="submit" class="button">Add to Cart</button>
                             </form>
                         </div>
+                        @if($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+                            <?php
+
+                                $nomer = 1;
+
+                                ?>
+
+                            @foreach($errors->all() as $error)
+                            <li>{{ $nomer++ }}. {{ $error }}</li>
+                            @endforeach
+                        </div>
+                        @endif
                         <ul class="product_meta">
                             <li><span class="theme-bg-clr">Tags:</span>
                                 <ul class="pd-tag">

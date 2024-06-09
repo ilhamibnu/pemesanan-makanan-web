@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -15,6 +16,18 @@ class AuthController extends Controller
 
     public function postlogin(Request $request)
     {
+        Session::flash('emailLogin', $request->email);
+        Session::flash('passwordLogin', $request->password);
+
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ], [
+            'email.required' => 'Email harus diisi',
+            'email.email' => 'Email tidak valid',
+            'password.required' => 'Password harus diisi',
+        ]);
+
         if (Auth::attempt($request->only('email', 'password'))) {
             if (Auth::user()->role == 'admin') {
                 return redirect('/admin/dashboard');

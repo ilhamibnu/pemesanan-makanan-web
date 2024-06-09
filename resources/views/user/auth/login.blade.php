@@ -37,30 +37,31 @@
 <section class="gap">
     <div class="container">
         <div class="row">
+            @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+                <?php
+
+                    $nomer = 1;
+
+                    ?>
+
+                @foreach($errors->all() as $error)
+                <li>{{ $nomer++ }}. {{ $error }}</li>
+                @endforeach
+            </div>
+            @endif
             <div class="col-lg-6">
                 <div class="box login">
                     <h3>Log In Your Account</h3>
-                    @if($errors->any())
-                    <div class="alert alert-danger alert-dismissible fade show mt-2">
 
-
-
-                        <?php
-
-                            $nomer = 1;
-
-                            ?>
-
-                        @foreach($errors->all() as $error)
-                        <li>{{ $nomer++ }}. {{ $error }}</li>
-                        @endforeach
-                    </div>
-                    @endif
 
                     <form action="/user/login" method="POST">
                         @csrf
-                        <input type="email" name="email" placeholder="Username or email address" required>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="email" name="email" value="{{ Session::get('emailLogin') }}" placeholder="Username or email address" required>
+                        <input type="password" name="password" value="{{ Session::get('passwordLogin') }}" placeholder="Password" required>
                         <div class="remember">
                             {{-- <div class="first">
                                 <input type="checkbox" name="checkbox" id="checkbox">
@@ -80,8 +81,8 @@
                     <h3>Log In Your Account</h3>
                     <form action="/user/register" method="POST">
                         @csrf
-                        <input type="text" name="name" placeholder="Complete Name" required>
-                        <input type="email" name="email" placeholder="Username or email address" required>
+                        <input type="text" name="name" value="{{ Session::get('nameRegister') }}" placeholder="Complete Name" required>
+                        <input type="email" name="email" value="{{ Session::get('emailRegister') }}" placeholder="Username or email address" required>
                         <input type="password" name="password" placeholder="Password" required>
                         <input type="password" name="repassword" placeholder="Password" required>
                         <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
