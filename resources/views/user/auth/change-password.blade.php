@@ -20,13 +20,13 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="title-area-img">
-                            <img alt="title-area-img" src="assets/img/title-area-img-1.jpg">
-                            <img alt="pata" class="pata" src="assets/img/pata.png">
+                            <img alt="title-area-img" src="{{ asset('user/assets/img/title-area-img-1.jpg') }}">
+                            <img alt="pata" class="pata" src="{{ asset('user/assets/img/pata.png') }}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="title-area-img two">
-                            <img alt="title-area-img" src="assets/img/title-area-img-2.jpg">
+                            <img alt="title-area-img" src="{{ asset('user/assets/img/title-area-img-2.jpg') }}">
                         </div>
                     </div>
                 </div>
