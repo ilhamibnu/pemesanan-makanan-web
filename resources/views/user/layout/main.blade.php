@@ -150,4 +150,10 @@
     </script>
     @endif
 
+    @if(Session::get('logindulu'))
+    <script>
+        swal("Gagal!", "Silahkan Login Terlebih Dahulu", "error");
+    </script>
+    @endif
+
 </body>

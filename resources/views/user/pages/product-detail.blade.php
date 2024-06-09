@@ -1,5 +1,5 @@
 @extends('user.layout.main')
-@section('title' , ' - ' . $product->nama)'
+@section('title' , ' - ' . $product->nama)
 @section('content')
 <section class="banner" style="background-image:url({{ asset('user/assets/img/background.png') }})">
     <div class="container">

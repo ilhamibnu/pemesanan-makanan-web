@@ -71,7 +71,7 @@ class CartController extends Controller
             'items.*.jumlah.required' => 'Jumlah tidak boleh kosong',
             'items.*.jumlah.integer' => 'Jumlah harus berupa angka',
             'items.*.jumlah.min' => 'Jumlah minimal 1',
-        
+
         ]);
 
         // Loop melalui item yang diterima dari form
