@@ -15,7 +15,7 @@ class CheckoutController extends Controller
         if ($transaksi->bank != '' && $transaksi->no_va != '') {
             $snapToken = '';
         } else {
-            \Midtrans\Config::$serverKey = 'SB-Mid-server-aNyMN6S4_am_yDaJ6fpdfrxc';
+            \Midtrans\Config::$serverKey = 'SB-Mid-server-QmM6Wx6PNzqhOeVL9f4tnBM7';
             // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
             \Midtrans\Config::$isProduction = false;
 

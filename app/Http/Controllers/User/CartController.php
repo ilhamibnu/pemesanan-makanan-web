@@ -97,7 +97,7 @@ class CartController extends Controller
             }
         }
 
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-aNyMN6S4_am_yDaJ6fpdfrxc';
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-QmM6Wx6PNzqhOeVL9f4tnBM7';
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         \Midtrans\Config::$isProduction = false;
 
@@ -137,7 +137,7 @@ class CartController extends Controller
 
     public function callback(Request $request)
     {
-        $serverkey = 'SB-Mid-server-aNyMN6S4_am_yDaJ6fpdfrxc';
+        $serverkey = 'SB-Mid-server-QmM6Wx6PNzqhOeVL9f4tnBM7';
         $hashed = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $serverkey);
 
         if ($hashed == $request->signature_key) {

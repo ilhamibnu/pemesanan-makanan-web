@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="cart_totals-checkout" style="background-image: url({{ asset('user/assets/img/patron.jpg') }})">
+                    <div class="cart_totals-checkout" style="background-color: #d2691e;">
                         <div class="cart_totals cart-Total">
                             <h4>Cart Total</h4>
                             <table class="shop_table_responsive">
@@ -104,19 +104,25 @@
                                     </label>
                                 </li>
                             </ul>
-                            <button id="pay-button" class="button"><span>Pay</span></button>
+                            <button id="pay-button" type="button" class="button"><span>Pay</span></button>
                         </div>
                         @else
                         <div class="checkout-side">
-                            <h3>Payment</h3>
-                            <ul>
-                                <li>
-                                    Status Pembayaran : {{ $transaksi->status_pembayaran }} <br>
-                                    Bank : {{ $transaksi->bank }} <br>
-                                    No Rekening : {{ $transaksi->no_va }} <br>
-                                    Expired : {{ $transaksi->expired_at }}
-                                </li>
-                            </ul>
+                            <div class="cart_totals cart-Total">
+                                <h3>Payment</h3>
+                                <ul>
+                                    <li>
+                                        Status Pembayaran : {{ $transaksi->status_pembayaran }} <br>
+                                        Bank : {{ $transaksi->bank }} <br>
+                                        No Rekening : {{ $transaksi->no_va }} <br>
+                                        Expired : {{ $transaksi->expired_at }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <br>
                         </div>
                         @endif
 
@@ -129,7 +135,7 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-T7tGstPTu1xNiEG7"></script>
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-xIE2EKmOwAlhBnJa"></script>
 <script type="text/javascript">
     // For example trigger on button clicked, or any time you need
     document.getElementById('pay-button').onclick = function() {
@@ -138,3 +144,4 @@
     };
 
 </script>
+@endsection

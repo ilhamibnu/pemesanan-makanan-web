@@ -76,7 +76,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="box register">
-                    <div class="parallax" style="background-image: url({{ asset('user/assets/img/patron.jpg') }})"></div>
+                    <div class="parallax" style="background-color: #d2691e;"></div>
                     <h3>Log In Your Account</h3>
                     <form action="/user/register" method="POST">
                         @csrf

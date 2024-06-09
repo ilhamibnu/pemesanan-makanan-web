@@ -58,7 +58,16 @@
                                 </div>
                             </td>
                             <td>
-                                <span>{{ $item->status_pembayaran }}</span>
+                                {{-- <span>{{ $item->status_pembayaran }}</span> --}}
+                                @if($item->status_pembayaran == 'Belum Pilih Pembayaran')
+                                <span>Belum Pilh Pembayaran</span>
+                                @elseif($item->status_pembayaran == 'pending')
+                                <span>Menunggu Pembayaran</span>
+                                @elseif($item->status_pembayaran == 'expire')
+                                <span>Pembayaran Kadaluarsa</span>
+                                @else
+                                <span>Pembayaran Berhasil</span>
+                                @endif
                             </td>
                             <td class="product-quantity">
                                 @foreach ($item->detailTransaksi as $detail)

@@ -176,7 +176,7 @@ class AuthController extends Controller
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'Password Reset';
-                $mail->Body    = 'To reset your password, please click the link below:<br><br><a href="http://127.0.0.1:8000/user/change-password/' . $Code . '">Reset Password</a>';
+                $mail->Body    = 'To reset your password, please click the link below:<br><br><a href="https://makanan.kaliansenang.my.id/user/change-password/' . $Code . '">Reset Password</a>';
                 $updatecode = User::where('email', '=', $request->email)->first();
                 $updatecode->code = $Code;
                 $updatecode->status_code = 'aktif';
