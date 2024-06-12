@@ -8,73 +8,73 @@
                     <div class="row align-items-end">
                         <div class="col-xl-6">
                             <div class="featured-area">
-                                <h2>The Perfect Space to Enjoy Fantastic Food</h2>
-                                <h5>Festive dining at Farthings where we are strong believers in using the very best produce</h5>
+                                <h2>Ala Cafe Jember</h2>
+                                <h5>Menyediakan Makanan, Minuman dan Cemilan</h5>
                                 <div class="d-md-flex align-items-center">
                                     <a href="menu-1.html" class="button">See Our Menus</a>
-                                    <div class="video">
+                                    {{-- <div class="video">
                                         <a data-fancybox="" href="https://www.youtube.com/watch?v=1La4QzGeaaQ"><i>
                                                 <svg width="15" height="22" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 8.5L0.5 0.272758L0.5 16.7272L11 8.5Z" fill="#fff" />
                                                 </svg>
                                             </i>Watch Video</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-2.jpg') }})">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-xl-6">
-                            <div class="featured-area">
-                                <h2>grilled cheese</h2>
-                                <h1>burger</h1>
-                                <h6>limited time offer</h6>
-                                <div class="d-md-flex align-items-center">
-                                    <a href="menu-1.html" class="button">get offer today</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-3.jpg') }})">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-xl-6">
-                            <div class="featured-area">
-                                <h2>delicious</h2>
-                                <h1>Hot Pizza</h1>
-                                <h6>don't miss this deal</h6>
-                                <div class="d-md-flex align-items-center">
-                                    <a href="menu-1.html" class="button">get offer today</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-4.jpg') }})">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-xl-6">
-                            <div class="featured-area">
-                                <h2>Summer Drink</h2>
-                                <h1>Cocktail</h1>
-                                <h6>limited time offer</h6>
-                                <div class="d-md-flex align-items-center">
-                                    <a href="menu-1.html" class="button">get offer today</a>
-                                </div>
+            {{-- <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-2.jpg') }})">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-xl-6">
+                        <div class="featured-area">
+                            <h2>grilled cheese</h2>
+                            <h1>burger</h1>
+                            <h6>limited time offer</h6>
+                            <div class="d-md-flex align-items-center">
+                                <a href="menu-1.html" class="button">get offer today</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="weekly-special">
+        <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-3.jpg') }})">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-xl-6">
+                        <div class="featured-area">
+                            <h2>delicious</h2>
+                            <h1>Hot Pizza</h1>
+                            <h6>don't miss this deal</h6>
+                            <div class="d-md-flex align-items-center">
+                                <a href="menu-1.html" class="button">get offer today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-section item" style="background-image: url({{ asset('user/assets/img/hero-4.jpg') }})">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-xl-6">
+                        <div class="featured-area">
+                            <h2>Summer Drink</h2>
+                            <h1>Cocktail</h1>
+                            <h6>limited time offer</h6>
+                            <div class="d-md-flex align-items-center">
+                                <a href="menu-1.html" class="button">get offer today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        </div>
+        {{-- <div class="weekly-special">
             <span>Weekly Special</span>
             <div>
                 <h4><sup>$</sup>90.85</h4>
@@ -88,9 +88,9 @@
                 </ul>
             </div>
             <img alt="Pizza" src="{{ asset('user/assets/img/pizze-img.png') }}">
-        </div>
+        </div> --}}
     </section>
-    <section class="gap">
+    {{-- <section class="gap">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
@@ -104,58 +104,144 @@
                         <p>Nisl quam nestibulum ac quam nec odio eleme aucan ligula. Orci varius nat oque pena tibus et urient monte nascete ridiculus mus nellentesq um ac qu am nec odio rbine. Nisl quam nestibu aucan ligula. </p>
                         <div class="mt-4 d-flex align-items-center">
                             <img alt="girl" src="{{ asset('user/assets/img/girl.jpg') }}">
-                            <div>
-                                <h4>Willimes James</h4>
-                                <p>Director and Chief Operations Officer</p>
-                            </div>
-                        </div>
-                    </div>
+    <div>
+        <h4>Willimes James</h4>
+        <p>Director and Chief Operations Officer</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-xl-4 col-lg-6">
+            <div class="restaurant-card">
+                <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant.jpg') }}">
+                <div class="restaurant-span">
+                    <span>Restaurant</span>
                 </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card">
-                        <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant.jpg') }}">
-                        <div class="restaurant-span">
-                            <span>Restaurant</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Restaurant</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card coctail">
-                        <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant-2.jpg') }}">
-                        <div class="restaurant-span">
-                            <span>Coctail Bar</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Coctail Bar</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card">
-                        <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant-3.jpg') }}">
-                        <div class="restaurant-span">
-                            <span>Private Dining</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Private Dining</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
+                <div class="coctail-bar">
+                    <h5>Restaurant</h5>
+                    <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
+                    <a href="contact.html">Reserve a Table</a>
                 </div>
             </div>
         </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="restaurant-card coctail">
+                <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant-2.jpg') }}">
+                <div class="restaurant-span">
+                    <span>Coctail Bar</span>
+                </div>
+                <div class="coctail-bar">
+                    <h5>Coctail Bar</h5>
+                    <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
+                    <a href="contact.html">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="restaurant-card">
+                <img alt="Restaurant-img" class="w-100" src="{{ asset('user/assets/img/restaurant-3.jpg') }}">
+                <div class="restaurant-span">
+                    <span>Private Dining</span>
+                </div>
+                <div class="coctail-bar">
+                    <h5>Private Dining</h5>
+                    <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio rbine.</p>
+                    <a href="contact.html">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section> --}}
+
+    <section class="section-featured" style="background-color: #f5f8fd;">
+        <div class="container">
+            <div class="heading-two">
+                <h2>Featured Dishes</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row dishes owl-carousel owl-theme">
+                @foreach ($mostproduct as $product)
+                <div class="item col-xl-12">
+                    <div class="featured-dishes">
+                        <div class="featured-dishes-img">
+                            <img alt="featured-dishes" src="{{ asset('img/product/' . basename($product->gambar)) }}" class="rounded-circle" height="200px">
+                        </div>
+                        <ul class="star">
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                        <a href="/user/product/{{ $product->id }}">
+                            <h5>{{ $product->nama }}</h5>
+                        </a>
+                        <p><span>Rp. </span>{{ number_format($product->harga, 0, ',', '.') }}</p>
+                        <a href="/user/product/{{ $product->id }}">
+                            <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="m452 120h-60.946c-7.945-67.478-65.477-120-135.054-120s-127.109 52.522-135.054 120h-60.946c-11.046 0-20 8.954-20 20v352c0 11.046 8.954 20 20 20h392c11.046 0 20-8.954 20-20v-352c0-11.046-8.954-20-20-20zm-196-80c47.484 0 87.019 34.655 94.659 80h-189.318c7.64-45.345 47.175-80 94.659-80zm176 432h-352v-312h40v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h192v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h40z"></path>
+                                    </g>
+                                </svg></i></a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </section>
+
     <section class="section-discover-menu">
+        <div class="container">
+            <div class="heading-two">
+                <h2>Discover Menu</h2>
+                <div class="line"></div>
+            </div>
+            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                @foreach ($kategori as $item)
+                <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="v-pills-{{ $item->nama }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ $item->nama }}" type="button" role="tab" aria-controls="v-pills-{{ $item->nama }}" aria-selected="true">
+                    {{ $item->nama }}</button>
+                @endforeach
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                @foreach ($kategori as $item)
+                <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="v-pills-{{ $item->nama }}" role="tabpanel" aria-labelledby="v-pills-{{ $item->nama }}-tab">
+                    <div class="row align-items-center discover-menu">
+                        @foreach ($item->product as $data)
+                        <div class="col-xl-4 col-md-6">
+                            <div class="featured-dishes">
+                                <div class="featured-dishes-img">
+                                    <img alt="featured-dishes" src="{{ asset('img/product/' . basename($data->gambar)) }}" class="rounded-circle" height="200px">
+                                </div>
+                                <ul class="star">
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                                <a href="/user/product/{{ $data->id }}">
+                                    <h5>{{ $data->nama }}</h5>
+                                </a>
+                                <p><span>Rp. </span>{{ number_format($data->harga, 0, ',', '.') }}</p>
+                                <a href="/user/product/{{ $data->id }}">
+                                    <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="m452 120h-60.946c-7.945-67.478-65.477-120-135.054-120s-127.109 52.522-135.054 120h-60.946c-11.046 0-20 8.954-20 20v352c0 11.046 8.954 20 20 20h392c11.046 0 20-8.954 20-20v-352c0-11.046-8.954-20-20-20zm-196-80c47.484 0 87.019 34.655 94.659 80h-189.318c7.64-45.345 47.175-80 94.659-80zm176 432h-352v-312h40v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h192v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h40z"></path>
+                                            </g>
+                                        </svg></i></a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    {{-- <section class="section-discover-menu">
         <div class="container">
             <div class="heading-two">
                 <h2>Discover Menu</h2>
@@ -289,254 +375,254 @@
                         <div class="col-xl-6">
                             <div class="discover-img">
                                 <img alt="discover" src="{{ asset('user/assets/img/discover-1.png') }}">
-                            </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="discover">
-                                <h4>Dessert</h4>
-                                <ul>
-                                    <li>
-                                        <div>
-                                            <h6>Four Chease Garlic Bread</h6>
-                                            <p>Toested french bread topped with romano</p>
-                                        </div>
-                                        <span>$9.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Rastrami Roll</h6>
-                                            <p>Spreadable cream cheese, blue cheese</p>
-                                        </div>
-                                        <span>$16.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Caprese Salad Kabobs</h6>
-                                            <p>Cherry-size fresh mozzarella cheese balls</p>
-                                        </div>
-                                        <span>$34.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Peachy Jalepeno Guacomole</h6>
-                                            <p>Ground cumin, avocados, peeled and cubed</p>
-                                        </div>
-                                        <span>$40.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+    </div>
+    </div>
+    <div class="col-xl-5">
+        <div class="discover">
+            <h4>Dessert</h4>
+            <ul>
+                <li>
+                    <div>
+                        <h6>Four Chease Garlic Bread</h6>
+                        <p>Toested french bread topped with romano</p>
                     </div>
+                    <span>$9.00</span>
+                </li>
+                <li>
+                    <div>
+                        <h6>Rastrami Roll</h6>
+                        <p>Spreadable cream cheese, blue cheese</p>
+                    </div>
+                    <span>$16.00</span>
+                </li>
+                <li>
+                    <div>
+                        <h6>Caprese Salad Kabobs</h6>
+                        <p>Cherry-size fresh mozzarella cheese balls</p>
+                    </div>
+                    <span>$34.00</span>
+                </li>
+                <li>
+                    <div>
+                        <h6>Peachy Jalepeno Guacomole</h6>
+                        <p>Ground cumin, avocados, peeled and cubed</p>
+                    </div>
+                    <span>$40.00</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <div class="row align-items-center discover-menu">
+            <div class="col-xl-6">
+                <div class="discover-img">
+                    <img alt="discover" src="{{ asset('user/assets/img/discover-2.png') }}">
                 </div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <div class="row align-items-center discover-menu">
-                        <div class="col-xl-6">
-                            <div class="discover-img">
-                                <img alt="discover" src="{{ asset('user/assets/img/discover-2.png') }}">
+            </div>
+            <div class="col-xl-5">
+                <div class="discover">
+                    <h4>Steak </h4>
+                    <ul>
+                        <li>
+                            <div>
+                                <h6>Four Chease Garlic Bread</h6>
+                                <p>Toested french bread topped with romano</p>
                             </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="discover">
-                                <h4>Steak </h4>
-                                <ul>
-                                    <li>
-                                        <div>
-                                            <h6>Four Chease Garlic Bread</h6>
-                                            <p>Toested french bread topped with romano</p>
-                                        </div>
-                                        <span>$9.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Rastrami Roll</h6>
-                                            <p>Spreadable cream cheese, blue cheese</p>
-                                        </div>
-                                        <span>$16.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Caprese Salad Kabobs</h6>
-                                            <p>Cherry-size fresh mozzarella cheese balls</p>
-                                        </div>
-                                        <span>$34.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Peachy Jalepeno Guacomole</h6>
-                                            <p>Ground cumin, avocados, peeled and cubed</p>
-                                        </div>
-                                        <span>$40.00</span>
-                                    </li>
-                                </ul>
+                            <span>$9.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Rastrami Roll</h6>
+                                <p>Spreadable cream cheese, blue cheese</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-coffee" role="tabpanel" aria-labelledby="v-pills-coffee-tab">
-                    <div class="row align-items-center discover-menu">
-                        <div class="col-xl-6">
-                            <div class="discover-img">
-                                <img alt="discover" src="{{ asset('user/assets/img/discover-3.png') }}">
+                            <span>$16.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Caprese Salad Kabobs</h6>
+                                <p>Cherry-size fresh mozzarella cheese balls</p>
                             </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="discover">
-                                <h4>Coffee Menu</h4>
-                                <ul>
-                                    <li>
-                                        <div>
-                                            <h6>Espresso Macchiato</h6>
-                                            <p>Chicken / Apple / Tomatos</p>
-                                        </div>
-                                        <span>$9.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Mocha Whipped Cream</h6>
-                                            <p>Bacon / Shrimp / Garlic</p>
-                                        </div>
-                                        <span>$16.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Cold Coffee</h6>
-                                            <p>Pork / Tomatoes / Veggies</p>
-                                        </div>
-                                        <span>$34.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Caramel Macchiato</h6>
-                                            <p>Prawn / Sausage / Totatos</p>
-                                        </div>
-                                        <span>$40.00</span>
-                                    </li>
-                                </ul>
+                            <span>$34.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Peachy Jalepeno Guacomole</h6>
+                                <p>Ground cumin, avocados, peeled and cubed</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-pizza" role="tabpanel" aria-labelledby="v-pills-pizza-tab">
-                    <div class="row align-items-center discover-menu">
-                        <div class="col-xl-6">
-                            <div class="discover-img">
-                                <img alt="discover" src="{{ asset('user/assets/img/discover-8.png') }}">
-                            </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="discover">
-                                <h4>pizza</h4>
-                                <ul>
-                                    <li>
-                                        <div>
-                                            <h6>Four Chease Garlic Bread</h6>
-                                            <p>Toested french bread topped with romano</p>
-                                        </div>
-                                        <span>$9.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Rastrami Roll</h6>
-                                            <p>Spreadable cream cheese, blue cheese</p>
-                                        </div>
-                                        <span>$16.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Caprese Salad Kabobs</h6>
-                                            <p>Cherry-size fresh mozzarella cheese balls</p>
-                                        </div>
-                                        <span>$34.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Peachy Jalepeno Guacomole</h6>
-                                            <p>Ground cumin, avocados, peeled and cubed</p>
-                                        </div>
-                                        <span>$40.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-burger" role="tabpanel" aria-labelledby="v-pills-burger-tab">
-                    <div class="row align-items-center discover-menu">
-                        <div class="col-xl-6">
-                            <div class="discover-img">
-                                <img alt="discover" src="{{ asset('user/assets/img/discover-7.png') }}">
-                            </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="discover">
-                                <h4>burger</h4>
-                                <ul>
-                                    <li>
-                                        <div>
-                                            <h6>Four Chease Garlic Bread</h6>
-                                            <p>Toested french bread topped with romano</p>
-                                        </div>
-                                        <span>$9.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Rastrami Roll</h6>
-                                            <p>Spreadable cream cheese, blue cheese</p>
-                                        </div>
-                                        <span>$16.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Caprese Salad Kabobs</h6>
-                                            <p>Cherry-size fresh mozzarella cheese balls</p>
-                                        </div>
-                                        <span>$34.00</span>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h6>Peachy Jalepeno Guacomole</h6>
-                                            <p>Ground cumin, avocados, peeled and cubed</p>
-                                        </div>
-                                        <span>$40.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                            <span>$40.00</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="gap">
+    </div>
+    <div class="tab-pane fade" id="v-pills-coffee" role="tabpanel" aria-labelledby="v-pills-coffee-tab">
+        <div class="row align-items-center discover-menu">
+            <div class="col-xl-6">
+                <div class="discover-img">
+                    <img alt="discover" src="{{ asset('user/assets/img/discover-3.png') }}">
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="discover">
+                    <h4>Coffee Menu</h4>
+                    <ul>
+                        <li>
+                            <div>
+                                <h6>Espresso Macchiato</h6>
+                                <p>Chicken / Apple / Tomatos</p>
+                            </div>
+                            <span>$9.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Mocha Whipped Cream</h6>
+                                <p>Bacon / Shrimp / Garlic</p>
+                            </div>
+                            <span>$16.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Cold Coffee</h6>
+                                <p>Pork / Tomatoes / Veggies</p>
+                            </div>
+                            <span>$34.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Caramel Macchiato</h6>
+                                <p>Prawn / Sausage / Totatos</p>
+                            </div>
+                            <span>$40.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-pizza" role="tabpanel" aria-labelledby="v-pills-pizza-tab">
+        <div class="row align-items-center discover-menu">
+            <div class="col-xl-6">
+                <div class="discover-img">
+                    <img alt="discover" src="{{ asset('user/assets/img/discover-8.png') }}">
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="discover">
+                    <h4>pizza</h4>
+                    <ul>
+                        <li>
+                            <div>
+                                <h6>Four Chease Garlic Bread</h6>
+                                <p>Toested french bread topped with romano</p>
+                            </div>
+                            <span>$9.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Rastrami Roll</h6>
+                                <p>Spreadable cream cheese, blue cheese</p>
+                            </div>
+                            <span>$16.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Caprese Salad Kabobs</h6>
+                                <p>Cherry-size fresh mozzarella cheese balls</p>
+                            </div>
+                            <span>$34.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Peachy Jalepeno Guacomole</h6>
+                                <p>Ground cumin, avocados, peeled and cubed</p>
+                            </div>
+                            <span>$40.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-burger" role="tabpanel" aria-labelledby="v-pills-burger-tab">
+        <div class="row align-items-center discover-menu">
+            <div class="col-xl-6">
+                <div class="discover-img">
+                    <img alt="discover" src="{{ asset('user/assets/img/discover-7.png') }}">
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="discover">
+                    <h4>burger</h4>
+                    <ul>
+                        <li>
+                            <div>
+                                <h6>Four Chease Garlic Bread</h6>
+                                <p>Toested french bread topped with romano</p>
+                            </div>
+                            <span>$9.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Rastrami Roll</h6>
+                                <p>Spreadable cream cheese, blue cheese</p>
+                            </div>
+                            <span>$16.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Caprese Salad Kabobs</h6>
+                                <p>Cherry-size fresh mozzarella cheese balls</p>
+                            </div>
+                            <span>$34.00</span>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Peachy Jalepeno Guacomole</h6>
+                                <p>Ground cumin, avocados, peeled and cubed</p>
+                            </div>
+                            <span>$40.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section> --}}
+    {{-- <section class="gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bbq" style="background-image: url({{ asset('user/assets/img/bbq.jpg') }})">
-                        <h2>Steaks & BBQ</h2>
-                        <p>canonical classics to obscure<br> tiki drinks</p>
-                        <div class="bbr-price">
-                            <div>
-                                <h3>$120</h3>
-                                <span>per person</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bbq mb-0" style="background-image: url({{ asset('user/assets/img/bbq-1.jpg') }})">
-                        <h2>Cocktails</h2>
-                        <p>canonical classics to obscure <br> tiki drinks</p>
-                        <div class="bbr-price">
-                            <div>
-                                <h3>$120</h3>
-                                <span>per person</span>
-                            </div>
-                        </div>
-                    </div>
+    <h2>Steaks & BBQ</h2>
+    <p>canonical classics to obscure<br> tiki drinks</p>
+    <div class="bbr-price">
+        <div>
+            <h3>$120</h3>
+            <span>per person</span>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="bbq mb-0" style="background-image: url({{ asset('user/assets/img/bbq-1.jpg') }})">
+            <h2>Cocktails</h2>
+            <p>canonical classics to obscure <br> tiki drinks</p>
+            <div class="bbr-price">
+                <div>
+                    <h3>$120</h3>
+                    <span>per person</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    </div>
+    </div>
+    </section> --}}
     {{-- <section>
         <div class="container">
             <div style="background-color: #d2691e;" class="reserve-table">
@@ -581,43 +667,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="gap section-featured" style="background-color: #f5f8fd;">
-        <div class="container">
-            <div class="heading-two">
-                <h2>Featured Dishes</h2>
-                <div class="line"></div>
-            </div>
-            <div class="row dishes owl-carousel owl-theme">
-                @foreach ($mostproduct as $product)
-                <div class="item col-xl-12">
-                    <div class="featured-dishes">
-                        <div class="featured-dishes-img">
-                            <img alt="featured-dishes" src="{{ asset('user/assets/img/featured-dishes-1.png') }}">
-                        </div>
-                        <ul class="star">
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                        <a href="/user/product/{{ $product->id }}">
-                            <h5>{{ $product->nama }}</h5>
-                        </a>
-                        <p><span>Rp. </span>{{ number_format($product->harga, 0, ',', '.') }}</p>
-                        <a href="/user/product/{{ $product->id }}">
-                            <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                    <g>
-                                        <path d="m452 120h-60.946c-7.945-67.478-65.477-120-135.054-120s-127.109 52.522-135.054 120h-60.946c-11.046 0-20 8.954-20 20v352c0 11.046 8.954 20 20 20h392c11.046 0 20-8.954 20-20v-352c0-11.046-8.954-20-20-20zm-196-80c47.484 0 87.019 34.655 94.659 80h-189.318c7.64-45.345 47.175-80 94.659-80zm176 432h-352v-312h40v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h192v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h40z"></path>
-                                    </g>
-                                </svg></i></a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    <section class="gap">
+    {{-- <section class="gap">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
@@ -639,62 +689,62 @@
                                 </ul>
                             </div>
                             <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
-                        </div>
-                        <div class="bratlee-hamint item">
-                            <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <h3>Bratlee Hamint</h3>
-                                <ul class="star">
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
-                        </div>
-                        <div class="bratlee-hamint item">
-                            <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <h3>Bratlee Hamint</h3>
-                                <ul class="star">
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
-                        </div>
-                        <div class="bratlee-hamint item">
-                            <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <h3>Bratlee Hamint</h3>
-                                <ul class="star">
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="bratlee-img">
-                        <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
-                        <img alt="bratlee-hamint" class="bratlee-hamint-1" src="{{ asset('user/assets/img/bratlee-hamint-1.jpg') }}">
-                        <img alt="bratlee-hamin3" class="bratlee-hamint-3" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="bratlee-hamint item">
+        <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
+        <div class="d-flex align-items-center mt-4">
+            <h3>Bratlee Hamint</h3>
+            <ul class="star">
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+            </ul>
         </div>
-    </section>
-    <section class="gap no-top">
+        <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
+    </div>
+    <div class="bratlee-hamint item">
+        <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
+        <div class="d-flex align-items-center mt-4">
+            <h3>Bratlee Hamint</h3>
+            <ul class="star">
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+        </div>
+        <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
+    </div>
+    <div class="bratlee-hamint item">
+        <p>A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food. All great deeds and all great thoughts</p>
+        <div class="d-flex align-items-center mt-4">
+            <h3>Bratlee Hamint</h3>
+            <ul class="star">
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+                <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+        </div>
+        <img alt="quote" class="quote" src="{{ asset('user/assets/img/quote.png') }}">
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="bratlee-img">
+            <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
+            <img alt="bratlee-hamint" class="bratlee-hamint-1" src="{{ asset('user/assets/img/bratlee-hamint-1.jpg') }}">
+            <img alt="bratlee-hamin3" class="bratlee-hamint-3" src="{{ asset('user/assets/img/bratlee-hamint-3.jpg') }}">
+        </div>
+    </div>
+    </div>
+    </div>
+    </section> --}}
+    {{-- <section class="gap no-top">
         <div class="container">
             <div class="heading-two">
                 <h2>Meet Our Experts</h2>
@@ -704,80 +754,80 @@
                 <div class="col-xl-4 col-lg-6">
                     <div class="chef">
                         <img alt="cook chef" src="{{ asset('user/assets/img/chef-1.png') }}">
-                        <div class="chef-text">
-                            <div>
-                                <span>Dessert specialist</span>
-                                <a href="chef-details.html">
-                                    <h3>Thomas Walim</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="chef">
-                        <img alt="cook chef" src="{{ asset('user/assets/img/chef-2.png') }}">
-                        <div class="chef-text">
-                            <div>
-                                <span>Chef Master</span>
-                                <a href="chef-details.html">
-                                    <h3>James Jhonson</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="chef mb-0">
-                        <img alt="cook chef" src="{{ asset('user/assets/img/chef-3.png') }}">
-                        <div class="chef-text">
-                            <div>
-                                <span>Dessert specialist</span>
-                                <a href="chef-details.html">
-                                    <h3>Room Minal</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
-                            </div>
-                        </div>
-                    </div>
+    <div class="chef-text">
+        <div>
+            <span>Dessert specialist</span>
+            <a href="chef-details.html">
+                <h3>Thomas Walim</h3>
+            </a>
+            <ul class="social-media">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+            <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <div class="chef">
+            <img alt="cook chef" src="{{ asset('user/assets/img/chef-2.png') }}">
+            <div class="chef-text">
+                <div>
+                    <span>Chef Master</span>
+                    <a href="chef-details.html">
+                        <h3>James Jhonson</h3>
+                    </a>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                    <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <div class="chef mb-0">
+            <img alt="cook chef" src="{{ asset('user/assets/img/chef-3.png') }}">
+            <div class="chef-text">
+                <div>
+                    <span>Dessert specialist</span>
+                    <a href="chef-details.html">
+                        <h3>Room Minal</h3>
+                    </a>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                    <img alt="sine" src="{{ asset('user/assets/img/sine.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section> --}}
     <section class="gap no-bottom app-foods" style="background-color :#f5f8fd;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="heading">
                         <span>Best App For Foods Ordering</span>
-                        <h3>Manage Your Restaurant Anytime! Anywhere!</h3>
+                        <h3>We Are Avaible On</h3>
                     </div>
                     <ul class="higher-reach">
                         <li>
-                            <div class="bol"></div>Higher Reach - Minimal Effort
+                            <div class="bol"></div>Tersedia di App Food Delivery
                         </li>
                         <li>
-                            <div class="bol"></div>Showcase your Brand
+                            <div class="bol"></div>Harga Murah dan Terjangkau
                         </li>
                         <li>
-                            <div class="bol"></div>Exclusive offers & discounts
+                            <div class="bol"></div>Pesan Antar Bagi Anda Yang Mager
                         </li>
                     </ul>
                     <div class="d-sm-flex mt-5">
@@ -785,8 +835,8 @@
                             <div class="download-from">
                                 <i class="fa-brands fa-google-play"></i>
                                 <div>
-                                    <span>Download From</span>
-                                    <h5>Google Play</h5>
+                                    <span>Avaible On</span>
+                                    <h5>GoFood</h5>
                                 </div>
                             </div>
                         </a>
@@ -794,8 +844,8 @@
                             <div class="download-from apple">
                                 <i class="fa-brands fa-apple"></i>
                                 <div>
-                                    <span>Download From</span>
-                                    <h5>App Store</h5>
+                                    <span>Avaible On</span>
+                                    <h5>ShopeFood</h5>
                                 </div>
                             </div>
                         </a>
@@ -803,57 +853,31 @@
                 </div>
                 <div class="col-xl-6">
                     <div class="manage-your-img">
-                        <img alt="manage-your" src="{{ asset('user/assets/img/manage-your.png') }}">
+                        <img alt="manage-your" class="img-fluid" src="{{ asset('logo/testaja.png') }}">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="gap">
-        <div class="container">
-            <div class="heading-two">
-                <h2>Recent News</h2>
-                <div class="line"></div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="recent-news">
-                        <img alt="recent-news" src="{{ asset('user/assets/img/recent-news-1.jpg') }}">
-                        <div>
-                            <a href="#"><span>29 December, 2023</span></a>
-                            <a href="blog-details.html">
-                                <h3>Table restaurant located in on Bank Street</h3>
-                            </a>
-                            <div class="d-flex align-items-center"><img alt="img" class="me-3" src="{{ asset('user/assets/img/man.jpg') }}">
-                                <h6>by Thomas Walimes</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="recent-news">
-                        <img alt="recent-news" src="{{ asset('user/assets/img/recent-news-2.jpg') }}">
-                        <div>
-                            <a href="#"><span>29 December, 2023</span></a>
-                            <a href="blog-details.html">
-                                <h3>Craig Davies appointed executive head chef of Burgh</h3>
-                            </a>
-                            <div class="d-flex align-items-center"><img alt="img" class="me-3" src="{{ asset('user/assets/img/man.jpg') }}">
-                                <h6>by Thomas Walimes</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <div class="gap no-top">
         <div style="background-image: url({{ asset('user/assets/img/follow.jpg') }})" class="follow">
-            <i class="fa-brands fa-instagram"></i>
-            <a href="#">
-                <h2>Follow @Winsfolio.com</h2>
-            </a>
-            <p>Join our community to inspire your desires</p>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="follow-text">
+                        <h2>Follow Us On Social Media</h2>
+                        <p>Join our community to inspire your desires</p>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/alacafe.jbr" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/alacafe.jbr" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
     </div>
     @endsection

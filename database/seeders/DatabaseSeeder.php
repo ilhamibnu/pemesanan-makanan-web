@@ -37,34 +37,56 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Minuman',
         ]);
 
-        Product::create([
-            'nama' => 'Ayam Goreng',
-            'deskripsi' => 'Ayam Goreng Spesial',
-            'harga' => '15000',
-            'gambar' => 'ayam.jpg',
-            'id_kategori' => 1,
+        Kategori::create([
+            'nama' => 'Cemilan',
         ]);
 
         Product::create([
             'nama' => 'Nasi Goreng',
-            'deskripsi' => 'Nasi Goreng Spesial',
-            'harga' => '10000',
-            'gambar' => 'nasi.jpg',
+            'harga' => '15000',
+            'gambar' => 'nasigoreng.jpg',
             'id_kategori' => 1,
         ]);
 
         Product::create([
-            'nama' => 'Mie Goreng',
-            'deskripsi' => 'Mie Goreng Spesial',
-            'harga' => '8000',
-            'gambar' => 'mie.jpg',
+            'nama' => 'Mie Pangsit',
+            'harga' => '10000',
+            'gambar' => 'miepangsit.jpg',
+            'id_kategori' => 1,
+        ]);
+
+        Product::create([
+            'nama' => 'Fuyung Hai',
+            'harga' => '10000',
+            'gambar' => 'fuyunghai.jpg',
+            'id_kategori' => 1,
+        ]);
+
+        Product::create([
+            'nama' => 'Bakso',
+            'harga' => '10000',
+            'gambar' => 'bakso.jpg',
+            'id_kategori' => 1,
+        ]);
+
+
+        Product::create([
+            'nama' => 'Nasi Pecel',
+            'harga' => '10000',
+            'gambar' => 'nasipecel.jpg',
+            'id_kategori' => 1,
+        ]);
+
+        Product::create([
+            'nama' => 'Bakmi Goreng',
+            'harga' => '15000',
+            'gambar' => 'bakmigoreng.jpg',
             'id_kategori' => 1,
         ]);
 
 
         Product::create([
             'nama' => 'Es Teh',
-            'deskripsi' => 'Es Teh Manis',
             'harga' => '5000',
             'gambar' => 'teh.jpg',
             'id_kategori' => 2,
@@ -72,18 +94,59 @@ class DatabaseSeeder extends Seeder
 
         Product::create([
             'nama' => 'Es Jeruk',
-            'deskripsi' => 'Es Jeruk Manis',
             'harga' => '5000',
             'gambar' => 'jeruk.jpg',
             'id_kategori' => 2,
         ]);
 
         Product::create([
-            'nama' => 'Es Campur',
-            'deskripsi' => 'Es Campur Manis',
-            'harga' => '8000',
-            'gambar' => 'campur.jpg',
+            'nama' => 'Es Susu',
+            'harga' => '10000',
+            'gambar' => 'susu.jpg',
             'id_kategori' => 2,
+        ]);
+
+        Product::create([
+            'nama' => 'Air Putih',
+            'harga' => '5000',
+            'gambar' => 'airputih.jpg',
+            'id_kategori' => 2,
+        ]);
+
+
+        Product::create([
+            'nama' => 'Lumpia Ayam',
+            'harga' => '15000',
+            'gambar' => 'lumpia.jpg',
+            'id_kategori' => 3,
+        ]);
+
+        Product::create([
+            'nama' => 'Tahu Bakso',
+            'harga' => '10000',
+            'gambar' => 'tahubakso.jpg',
+            'id_kategori' => 3,
+        ]);
+
+        Product::create([
+            'nama' => 'Sempol Ayam',
+            'harga' => '10000',
+            'gambar' => 'sempol.jpg',
+            'id_kategori' => 3,
+        ]);
+
+        Product::create([
+            'nama' => 'Tahu Kucek',
+            'harga' => '10000',
+            'gambar' => 'tahukucek.jpg',
+            'id_kategori' => 3,
+        ]);
+
+        Product::create([
+            'nama' => 'Roti Bakar Coklat',
+            'harga' => '15000',
+            'gambar' => 'rotibakar.jpg',
+            'id_kategori' => 3,
         ]);
     }
 }

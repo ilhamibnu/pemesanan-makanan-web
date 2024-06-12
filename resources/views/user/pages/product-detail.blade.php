@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Product Details</h2>
-                    <p>A magical combination that sent aromas to the taste buds</p>
+                  
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -44,12 +44,12 @@
                         <h6>Sale</h6>
                     </div>
                     <div class="featured-dishes-img">
-                        <img alt="featured-dishes" src="{{ asset('user/assets/img/product-detail-1.png') }}">
+                        <img alt="featured-dishes" class="rounded-circle" src="{{ asset('img/product/' . basename($product->gambar)) }}">
                     </div>
                 </div>
             </div>
             <div class="col-xl-6">
-                <div class="available">
+                {{-- <div class="available">
                     <span>
                         <i class="fa-solid fa-check"></i>
                         available
@@ -62,7 +62,7 @@
                         <li><i class="fa-solid fa-star"></i></li>
                     </ul>
                     <h6>( 1 Review )</h6>
-                </div>
+                </div> --}}
                 <div class="product-info ">
                     <h3>
                         {{ $product->nama}}
@@ -71,8 +71,8 @@
                         <div class="deal-week mb-4 d-flex align-items-center">
                             <h2 class="m-0"><span>Rp. </span>{{ number_format($product->harga, 0, ',', '.') }}</h2>
                         </div>
-                        <h5>What’s Included</h5>
-                        <p>Sausage, three rashers of streaky bacon, two fried eggs</p>
+                        {{-- <h5>What’s Included</h5>
+                        <p>Sausage, three rashers of streaky bacon, two fried eggs</p> --}}
                         <div class="d-flex align-items-center mt-4">
                             <form action="/user/cart/store" method="post">
                                 @csrf
@@ -98,12 +98,10 @@
                         </div>
                         @endif
                         <ul class="product_meta">
-                            <li><span class="theme-bg-clr">Tags:</span>
+                            <li><span class="theme-bg-clr">Kategori:</span>
                                 <ul class="pd-tag">
                                     <li>
-                                        <a href="#" class="ps-0">featured products</a>
-                                        ,<a href="#">meat</a>
-                                        ,<a href="#">new products</a>
+                                        {{ $product->kategori->nama }}
                                     </li>
                                 </ul>
                             </li>
@@ -114,40 +112,40 @@
         </div>
     </div>
 </section>
-<div class="about-chef">
-    <div class="container">
-        <h2 class="pb-3">Description</h2>
-        <p>
-            Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte ulus mus nellent
-            esque habitanum ac quam nec odio rbine. Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. toque pena tibus et magnis dis u
-            rient monte nascete ridic ulus mus nellentesque habitanum ac quam nec odio rbine. Nisl quamu quam nec odio elementu sceisu aucan ligula. Orc
-            i varius natoque pena tibus et magnis dis urient monte nascete ridic ulus mus a habitanum ac quam nec odio rbine. Nisl quam nestibulum ac qua
-            m nec odio elementu sceisu aucan ligula. Orci varius natoque pe magnis dis urient monte nascete ridiculus mus nellentesque habitanum ac quam
-            nec odio rbine. Nisl quam nestibulum ac quam ntoque pena tibus et magnis dis urient monte nascete ridic ulus mus nellentesque habitanum ac
-            quam nec odio rbine. Nisl quam a quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascet
-            e ridic ulus mus n habitanum ac quam nec odio rbine.<br><br>
+{{-- <div class="about-chef">
+        <div class="container">
+            <h2 class="pb-3">Description</h2>
+            <p>
+                Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte ulus mus nellent
+                esque habitanum ac quam nec odio rbine. Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. toque pena tibus et magnis dis u
+                rient monte nascete ridic ulus mus nellentesque habitanum ac quam nec odio rbine. Nisl quamu quam nec odio elementu sceisu aucan ligula. Orc
+                i varius natoque pena tibus et magnis dis urient monte nascete ridic ulus mus a habitanum ac quam nec odio rbine. Nisl quam nestibulum ac qua
+                m nec odio elementu sceisu aucan ligula. Orci varius natoque pe magnis dis urient monte nascete ridiculus mus nellentesque habitanum ac quam
+                nec odio rbine. Nisl quam nestibulum ac quam ntoque pena tibus et magnis dis urient monte nascete ridic ulus mus nellentesque habitanum ac
+                quam nec odio rbine. Nisl quam a quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascet
+                e ridic ulus mus n habitanum ac quam nec odio rbine.<br><br>
 
-            Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte quam nec odio e
-            lementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascete ridic.</p>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6">
-                <div class="product-img">
-                    <img alt="product-img" src="{{ asset('user/assets/img/product-2.jpg') }}">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="product-img">
-                    <img alt="product-img" src="{{ asset('user/assets/img/product-3.jpg') }}">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="product-img">
-                    <img alt="product-img" src="{{ asset('user/assets/img/product-4.jpg') }}">
-                </div>
-            </div>
-
-        </div>
+                Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte quam nec odio e
+                lementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascete ridic.</p>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="product-img">
+                        <img alt="product-img" src="{{ asset('user/assets/img/product-2.jpg') }}">
+</div>
+</div>
+<div class="col-lg-4 col-sm-6">
+    <div class="product-img">
+        <img alt="product-img" src="{{ asset('user/assets/img/product-3.jpg') }}">
     </div>
+</div>
+<div class="col-lg-4 col-sm-6">
+    <div class="product-img">
+        <img alt="product-img" src="{{ asset('user/assets/img/product-4.jpg') }}">
+    </div>
+</div>
+
+</div>
+</div>
 </div>
 <section>
     <div class="container">
@@ -251,5 +249,5 @@
             </form>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

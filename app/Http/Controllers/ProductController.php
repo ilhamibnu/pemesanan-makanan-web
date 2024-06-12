@@ -22,14 +22,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
+            // 'deskripsi' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // 'stok' => 'required|numeric',
             'id_kategori' => 'required',
         ], [
             'nama.required' => 'Nama produk harus diisi',
-            'deskripsi.required' => 'Deskripsi produk harus diisi',
+            // 'deskripsi.required' => 'Deskripsi produk harus diisi',
             'harga.required' => 'Harga produk harus diisi',
             'harga.numeric' => 'Harga produk harus berupa angka',
             'gambar.required' => 'Gambar produk harus diisi',
@@ -47,7 +47,7 @@ class ProductController extends Controller
 
         Product::create([
             'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
+            // 'deskripsi' => $request->deskripsi,
             'harga' => $request->harga,
             'gambar' => $nama_gambar,
             // 'stok' => $request->stok,
@@ -61,14 +61,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
+            // 'deskripsi' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // 'stok' => 'required|numeric',
             'id_kategori' => 'required',
         ], [
             'nama.required' => 'Nama produk harus diisi',
-            'deskripsi.required' => 'Deskripsi produk harus diisi',
+            // 'deskripsi.required' => 'Deskripsi produk harus diisi',
             'harga.required' => 'Harga produk harus diisi',
             'harga.numeric' => 'Harga produk harus berupa angka',
             'gambar.image' => 'Gambar produk harus berupa gambar',
@@ -98,7 +98,7 @@ class ProductController extends Controller
 
         Product::where('id', $id)->update([
             'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
+            // 'deskripsi' => $request->deskripsi,
             'harga' => $request->harga,
             'gambar' => $nama_gambar,
             // 'stok' => $request->stok,

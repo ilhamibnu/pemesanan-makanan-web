@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Shop Cart</h2>
-                    <p>A magical combination that sent aromas to the taste buds</p>
+                  
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -76,15 +76,6 @@
             <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="v-pills-{{ $item->nama }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ $item->nama }}" type="button" role="tab" aria-controls="v-pills-{{ $item->nama }}" aria-selected="true">
                 {{ $item->nama }}</button>
             @endforeach
-
-            {{-- <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Steak</button>
-            <button class="nav-link" id="v-pills-coffee-tab" data-bs-toggle="pill" data-bs-target="#v-pills-coffee" type="button" role="tab" aria-controls="v-pills-coffee" aria-selected="false">
-                Coffee</button>
-            <button class="nav-link" id="v-pills-pizza-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pizza" type="button" role="tab" aria-controls="v-pills-pizza" aria-selected="false">
-                Pizza</button>
-            <button class="nav-link" id="v-pills-burger-tab" data-bs-toggle="pill" data-bs-target="#v-pills-burger" type="button" role="tab" aria-controls="v-pills-burger" aria-selected="false">
-                burger
-            </button> --}}
         </div>
         <div class="tab-content" id="v-pills-tabContent">
             @foreach ($kategori as $item)

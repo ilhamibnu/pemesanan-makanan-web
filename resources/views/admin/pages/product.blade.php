@@ -54,7 +54,7 @@
                                     <th class="text-capitalize text-center">nama</th>
                                     <th class="text-capitalize text-center">gambar</th>
                                     <th class="text-capitalize text-center">harga</th>
-                                    <th class="text-capitalize text-center">deskripsi</th>
+                                    {{-- <th class="text-capitalize text-center">deskripsi</th> --}}
                                     <th class="text-capitalize text-center">kategori</th>
                                     <th class="text-capitalize text-center">action</th>
                                 </tr>
@@ -65,7 +65,7 @@
                                     <td class="text-center">{{ $item->nama }}</td>
                                     <td class="text-center"><img src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="gambar" height="70px"></td>
                                     <td class="text-center">Rp. {{ number_format($item->harga, 0, ',', '.') }}</td>
-                                    <td class="text-center">{{ $item->deskripsi }}</td>
+                                    {{-- <td class="text-center">{{ $item->deskripsi }}</td> --}}
                                     <td class="text-center">{{ $item->kategori->nama }}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
@@ -107,11 +107,11 @@
                                                         <input class="form-control" type="number" name="harga" id="harga" value="{{ $item->harga }}" required>
                                                     </div>
 
-                                                    <div class="mb-3">
+                                                    {{-- <div class="mb-3">
                                                         <label class="col-form-label text-capitalize" for="deskripsi">masukkan
                                                             deskripsi:</label>
                                                         <textarea class="form-control" name="deskripsi" id="deksripsi" rows="4">{{ $item->deskripsi }}</textarea>
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="mb-3">
                                                         <label for="foto" class="form-label">Masukkan
                                                             Foto</label>
@@ -200,13 +200,13 @@
                                         harga:</label>
                                     <input class="form-control" type="number" name="harga" id="harga" required>
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label class="col-form-label text-capitalize" for="deskripsi">masukkan
                                         deskripsi:</label>
                                     <textarea class="form-control" name="deskripsi" id="deksripsi" rows="4">
 
                                             </textarea>
-                                </div>
+                                </div> --}}
                                 <div class="mb-3">
                                     <label for="foto" class="form-label">Masukkan Foto</label>
                                     <img id="add-img-preview" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">

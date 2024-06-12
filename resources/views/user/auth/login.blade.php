@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Login</h2>
-                    <p>A magical combination that sent aromas to the taste buds</p>
+                   
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -85,7 +85,7 @@
                         <input type="email" name="email" value="{{ Session::get('emailRegister') }}" placeholder="Username or email address" required>
                         <input type="password" name="password" placeholder="Password" required>
                         <input type="password" name="repassword" placeholder="Password" required>
-                        <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
+                        {{-- <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p> --}}
                         <button type="submit" class="button">Register</button>
                     </form>
                 </div>

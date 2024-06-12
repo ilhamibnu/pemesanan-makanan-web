@@ -64,7 +64,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logo">
                             <a href="/">
-                                <img alt="logo" src="{{ asset('user/assets/img/logo.png') }}">
+                                <img alt="logo" src="{{ asset('logo/logo-adit.png') }}" height="70px" height="70px">
                             </a>
                         </div>
                         <div class="d-flex cart-checkout">
@@ -89,12 +89,12 @@
                             <li class="navbar-dropdown">
                                 <a href="/">Home</a>
                             </li>
-                            <li class="navbar-dropdown">
+                            {{-- <li class="navbar-dropdown">
                                 <a href="/user/menu">Menu</a>
                             </li>
                             <li class="navbar-dropdown">
                                 <a href="/user/shop">Shop</a>
-                            </li>
+                            </li> --}}
                             <li class="navbar-dropdown">
                                 <a href="/user/contact">Contact</a>
                             </li>
@@ -130,16 +130,16 @@
     <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:block;">
         <div class="res-log">
             <a href="/">
-                <img src="{{ asset('user/assets/img/logo.png') }}" alt="Responsive Logo" class="white-logo">
+                <img src="{{ asset('logo/logo-adit.png') }}" height="70px" height="70px" alt="Responsive Logo" class="white-logo">
             </a>
         </div>
         <ul>
 
             <li><a href="/">Home</a></li>
 
-            <li><a href="/user/menu">Menu</a></li>
+            {{-- <li><a href="/user/menu">Menu</a></li>
 
-            <li><a href="/user/shop">Shop</a></li>
+            <li><a href="/user/shop">Shop</a></li> --}}
 
             <li><a href="/user/contact">contacts</a></li>
 

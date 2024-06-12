@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Shop Cart</h2>
-                    <p>A magical combination that sent aromas to the taste buds</p>
+
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -69,7 +69,7 @@
                         @foreach ($cart as $item)
                         <tr>
                             <td class="product-name">
-                                <img alt="img" src="{{ asset('user/assets/img/product-1.png') }}">
+                                <img alt="img" src="{{ asset('img/product/' . basename($item->product->gambar)) }}" height="100px" class="rounded-circle">
                                 <div>
                                     <a href="#">{{ $item->product->nama }}</a>
                                     <span>{{ $item->product->deskripsi }}</span>
@@ -168,6 +168,7 @@
         document.body.appendChild(form);
         form.submit();
     });
+
 </script>
 
 
@@ -197,5 +198,6 @@
             });
         });
     });
+
 </script>
 @endsection

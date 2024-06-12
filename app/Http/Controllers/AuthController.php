@@ -37,7 +37,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect('/admin/login')->with('fail', 'Email atau password salah');
+        return redirect('/admin/login')->with('logingagal', 'Email atau password salah');
     }
 
     public function updateprofil(Request $request)

@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Change Password</h2>
-                    <p>A magical combination that sent aromas to the taste buds</p>
+                   
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">

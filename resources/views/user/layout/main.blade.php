@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodio @yield('title')</title>
+    <title>Ala Cafe Jember @yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('user/assets/img/logo-icon.png') }}">
+    <link rel="icon" href="{{ asset('logo/logo-adit.png') }}">
     <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/css/owl.carousel.min.css') }}">
