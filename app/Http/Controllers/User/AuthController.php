@@ -18,10 +18,10 @@ class AuthController extends Controller
         return view('user.auth.login');
     }
 
-    public function register()
-    {
-        return view('user.auth.register');
-    }
+    // public function register()
+    // {
+    //     return view('user.auth.register');
+    // }
 
     public function loginPost(Request $request)
     {

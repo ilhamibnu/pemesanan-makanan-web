@@ -13,10 +13,10 @@ class DetailProductController extends Controller
     public function index($id)
     {
         $product = Product::with('kategori')->find($id);
-        $relateProduct = Product::where('id_kategori', $product->id_kategori)->where('id', '!=', $id)->get();
+        // $relateProduct = Product::where('id_kategori', $product->id_kategori)->where('id', '!=', $id)->get();
         return view('user.pages.product-detail', [
             'product' => $product,
-            'relateProduct' => $relateProduct,
+            // 'relateProduct' => $relateProduct,
         ]);
     }
 }

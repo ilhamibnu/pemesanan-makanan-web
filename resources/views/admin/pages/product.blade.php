@@ -69,21 +69,31 @@
                                     <td class="text-center">{{ $item->stok }}</td>
                                     <td class="text-center">
                                         @php
-                                            $jumlah_transaksi_paid = DB::table('transaksi')
-                                                ->join('detail_transaksi', 'transaksi.id', '=', 'detail_transaksi.id_transaksi')
-                                                ->where('detail_transaksi.id_product', $item->id)
-                                                ->where('transaksi.status_pembayaran', 'paid')
-                                                ->count();
 
-                                            $jumlah_transaksi_pending = DB::table('transaksi')
-                                                ->join('detail_transaksi', 'transaksi.id', '=', 'detail_transaksi.id_transaksi')
-                                                ->where('detail_transaksi.id_product', $item->id)
-                                                ->where('transaksi.status_pembayaran', 'pending')
-                                                ->count();
+                                        // $jumlah_transaksi_paid = DB::table('detail_transaksi')
+                                        // ->join('transaksi', 'detail_transaksi.id', 'transaksi.id')
+                                        // ->where('detail_transaksi.id_product', $item->id)
+                                        // ->where('transaksi.status_pembayaran', 'paid')
+                                        // ->sum('detail_transaksi.jumlah');
 
-                                            $sisa = $item->stok - ($jumlah_transaksi_paid + $jumlah_transaksi_pending);
 
-                                            echo $sisa;
+                                        // $jumlah_transaksi_pending = DB::table('detail_transaksi')
+                                        // ->join('transaksi', 'detail_transaksi.id', 'transaksi.id')
+                                        // ->where('detail_transaksi.id_product', $item->id)
+                                        // ->where('transaksi.status_pembayaran', 'pending')
+                                        // ->sum('detail_transaksi.jumlah');
+
+                                        $jumlah_transaksi_paid = \App\Models\DetailTransaksi::where('id_product', $item->id)->whereHas('transaksi', function ($query) {
+                                        $query->where('status_pembayaran', 'paid');
+                                        })->sum('jumlah');
+
+                                        $jumlah_transaksi_pending = \App\Models\DetailTransaksi::where('id_product', $item->id)->whereHas('transaksi', function ($query) {
+                                        $query->where('status_pembayaran', 'pending');
+                                        })->sum('jumlah');
+
+                                        $sisa = $item->stok - ($jumlah_transaksi_paid + $jumlah_transaksi_pending);
+
+                                        echo $sisa;
 
                                         @endphp
                                     </td>
@@ -137,129 +147,129 @@
                                                         <label class="col-form-label text-capitalize" for="deskripsi">masukkan
                                                             deskripsi:</label>
                                                         <textarea class="form-control" name="deskripsi" id="deksripsi" rows="4">{{ $item->deskripsi }}</textarea>
-                                                    </div> --}}
-                                                    <div class="mb-3">
-                                                        <label for="foto" class="form-label">Masukkan
-                                                            Foto</label>
-                                                        <input type="hidden" name="oldImage" value="{{ $item->foto }}">
-                                                        @if ($item->gambar)
-                                                        <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="Preview Image">
-                                                        @else
-                                                        <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">
-                                                        @endif
-                                                        <input type="file" onchange="previewImage(event, 'edit-img-preview-{{ $item->id }}')" name="gambar" id="foto-edit-{{ $item->id }}" class="form-control" autocomplete="off">
-                                                    </div>
+                                                </div> --}}
+                                                <div class="mb-3">
+                                                    <label for="foto" class="form-label">Masukkan
+                                                        Foto</label>
+                                                    <input type="hidden" name="oldImage" value="{{ $item->foto }}">
+                                                    @if ($item->gambar)
+                                                    <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="Preview Image">
+                                                    @else
+                                                    <img id="edit-img-preview-{{ $item->id }}" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">
+                                                    @endif
+                                                    <input type="file" onchange="previewImage(event, 'edit-img-preview-{{ $item->id }}')" name="gambar" id="foto-edit-{{ $item->id }}" class="form-control" autocomplete="off">
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
-                                                        Close
-                                                    </button>
-                                                    <button class="btn btn-primary" type="submit">
-                                                        Ok
-                                                    </button>
-                                                </div>
-                                            </form>
                                         </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button class="btn btn-primary" type="submit">
+                                                Ok
+                                            </button>
+                                        </div>
+                                        </form>
                                     </div>
                                 </div>
-                                {{-- End Modal --}}
-
-                                {{-- Delete Modal --}}
-                                <div class="modal fade" id="Delete{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Delete</h5>
-                                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Anda Yakin Akan Menghapus ?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
-                                                    Close
-                                                </button>
-                                                <form action="/admin/product/delete/{{ $item->id }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" id="delete-record{{ $item->id }}">Ya, Hapus</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- End Modal --}}
-                                @endforeach
-                            </tbody>
-                        </table>
                     </div>
+                    {{-- End Modal --}}
+
+                    {{-- Delete Modal --}}
+                    <div class="modal fade" id="Delete{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Delete</h5>
+                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Anda Yakin Akan Menghapus ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <form action="/admin/product/delete/{{ $item->id }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" id="delete-record{{ $item->id }}">Ya, Hapus</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End Modal --}}
+                    @endforeach
+                    </tbody>
+                    </table>
                 </div>
             </div>
-            {{-- Add Modal --}}
-            <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add</h5>
-                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form action="/admin/product/store" method="post" enctype="multipart/form-data">
-                            @csrf
-                            @method('POST')
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label class="col-form-label text-capitalize" for="jenis_kendaraan">Kategori</label>
-                                    <select class="form-select" name="id_kategori" id="jenis_kendaraan">
-                                        @foreach ($kategori as $item)
-                                        <option value="{{ $item->id }}" class="text-capitalize">{{ $item->nama }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="mb-3">
+        </div>
+        {{-- Add Modal --}}
+        <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="/admin/product/store" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('POST')
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="col-form-label text-capitalize" for="jenis_kendaraan">Kategori</label>
+                                <select class="form-select" name="id_kategori" id="jenis_kendaraan">
+                                    @foreach ($kategori as $item)
+                                    <option value="{{ $item->id }}" class="text-capitalize">{{ $item->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3">
 
-                                    <label class="col-form-label text-capitalize" for="nama">masukkan nama
-                                    </label>
-                                    <input class="form-control" name="nama" id="nama" type="text" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-capitalize" for="harga">masukkan
-                                        harga:</label>
-                                    <input class="form-control" type="number" name="harga" id="harga" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label text-capitalize" for="harga">masukkan
-                                        stok:</label>
-                                    <input class="form-control" type="number" name="stok" id="harga" required>
-                                </div>
-                                {{-- <div class="mb-3">
+                                <label class="col-form-label text-capitalize" for="nama">masukkan nama
+                                </label>
+                                <input class="form-control" name="nama" id="nama" type="text" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label text-capitalize" for="harga">masukkan
+                                    harga:</label>
+                                <input class="form-control" type="number" name="harga" id="harga" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label text-capitalize" for="harga">masukkan
+                                    stok:</label>
+                                <input class="form-control" type="number" name="stok" id="harga" required>
+                            </div>
+                            {{-- <div class="mb-3">
                                     <label class="col-form-label text-capitalize" for="deskripsi">masukkan
                                         deskripsi:</label>
                                     <textarea class="form-control" name="deskripsi" id="deksripsi" rows="4">
 
                                             </textarea>
                                 </div> --}}
-                                <div class="mb-3">
-                                    <label for="foto" class="form-label">Masukkan Foto</label>
-                                    <img id="add-img-preview" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">
-                                    <input type="file" onchange="previewImage(event, 'add-img-preview')" name="gambar" id="foto-add" class="form-control" autocomplete="off" />
-                                </div>
+                            <div class="mb-3">
+                                <label for="foto" class="form-label">Masukkan Foto</label>
+                                <img id="add-img-preview" class="img-preview img-fluid mb-3 col-md-6" style="display: none;">
+                                <input type="file" onchange="previewImage(event, 'add-img-preview')" name="gambar" id="foto-add" class="form-control" autocomplete="off" />
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-                                <button class="btn btn-primary" type="submit">
-                                    Save
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button class="btn btn-primary" type="submit">
+                                Save
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            {{-- End Modal --}}
         </div>
+        {{-- End Modal --}}
     </div>
-    <!-- DOM / jQuery  Ends-->
+</div>
+<!-- DOM / jQuery  Ends-->
 </div>
 
 <script>

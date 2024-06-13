@@ -47,7 +47,7 @@
                                 <option selected disabled>Pilih Status</option>
                                 <option value="Belum Pilih Pembayaran">Belum Pilih Pembayaran</option>
                                 <option value="pending">Pending</option>
-                                <option value="expired">Expired</option>
+                                <option value="expire">Expire</option>
                                 <option value="paid">Paid</option>
                             </select>
                         </div>
@@ -100,7 +100,7 @@
                                         @elseif($data->status_pembayaran == 'pending')
                                         <span class="badge badge-warning">{{ $data->status_pembayaran }}</span>
 
-                                        @elseif($data->status_pembayaran == 'expired')
+                                        @elseif($data->status_pembayaran == 'expire')
                                         <span class="badge badge-danger">{{ $data->status_pembayaran }}</span>
 
                                         @elseif($data->status_pembayaran == 'paid')

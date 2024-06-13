@@ -14,6 +14,7 @@ class LandingController extends Controller
     {
         $kategori = Kategori::all();
         $product2 = Product::with('kategori')->get()->sortByDesc('id');
+
         // product dengan jumlah terbali terbanyak dengan transaksi paid
         $mostproduct = DB::table('product')
             ->join('detail_transaksi', 'product.id', '=', 'detail_transaksi.id_product')
@@ -34,23 +35,23 @@ class LandingController extends Controller
         ]);
     }
 
-    public function menu()
-    {
-        $product = Product::with('kategori')->get()->sortByDesc('id');
-        return view('user.pages.menu', [
-            'product' => $product,
-        ]);
-    }
+    // public function menu()
+    // {
+    //     $product = Product::with('kategori')->get()->sortByDesc('id');
+    //     return view('user.pages.menu', [
+    //         'product' => $product,
+    //     ]);
+    // }
 
-    public function shop()
-    {
-        $kategori = Kategori::all();
-        $product = Product::with('kategori')->get()->sortByDesc('id');
-        return view('user.pages.shop', [
-            'product' => $product,
-            'kategori' => $kategori,
-        ]);
-    }
+    // public function shop()
+    // {
+    //     $kategori = Kategori::all();
+    //     $product = Product::with('kategori')->get()->sortByDesc('id');
+    //     return view('user.pages.shop', [
+    //         'product' => $product,
+    //         'kategori' => $kategori,
+    //     ]);
+    // }
 
     public function contact()
     {

@@ -80,7 +80,6 @@ Route::group(['middleware' => ['IsAdmin']], function () {
 # Auth
 Route::get('/user/login', [UserAuthController::class, 'login']);
 Route::post('/user/login', [UserAuthController::class, 'loginPost']);
-Route::get('/user/register', [UserAuthController::class, 'register']);
 Route::post('/user/register', [UserAuthController::class, 'registerPost']);
 Route::get('/user/logout', [UserAuthController::class, 'logout']);
 
