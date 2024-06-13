@@ -147,13 +147,22 @@
     @if(Session::get('kosongcart'))
     <script>
         swal("Gagal!", "Keranjang Masih Kosong", "error");
+
     </script>
     @endif
 
     @if(Session::get('logindulu'))
     <script>
         swal("Gagal!", "Silahkan Login Terlebih Dahulu", "error");
+
     </script>
     @endif
 
-</body>
+    @if(Session::get('stoktidakcukup'))
+    <script>
+        swal("Gagal!", "{{ Session::get('stoktidakcukup') }}", "error");
+
+    </script>
+    @endif
+
+</body> 

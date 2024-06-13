@@ -25,7 +25,7 @@ class ProductController extends Controller
             // 'deskripsi' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'stok' => 'required|numeric',
+            'stok' => 'required|numeric',
             'id_kategori' => 'required',
         ], [
             'nama.required' => 'Nama produk harus diisi',
@@ -36,8 +36,8 @@ class ProductController extends Controller
             'gambar.image' => 'Gambar produk harus berupa gambar',
             'gambar.mimes' => 'Gambar produk harus berupa gambar dengan format jpeg, png, jpg, gif, atau svg',
             'gambar.max' => 'Ukuran gambar produk maksimal 2 MB',
-            // 'stok.required' => 'Stok produk harus diisi',
-            // 'stok.numeric' => 'Stok produk harus berupa angka',
+            'stok.required' => 'Stok produk harus diisi',
+            'stok.numeric' => 'Stok produk harus berupa angka',
             'id_kategori.required' => 'Kategori produk harus diisi',
         ]);
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
             // 'deskripsi' => $request->deskripsi,
             'harga' => $request->harga,
             'gambar' => $nama_gambar,
-            // 'stok' => $request->stok,
+            'stok' => $request->stok,
             'id_kategori' => $request->id_kategori,
         ]);
 
@@ -64,7 +64,7 @@ class ProductController extends Controller
             // 'deskripsi' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'stok' => 'required|numeric',
+            'stok' => 'required|numeric',
             'id_kategori' => 'required',
         ], [
             'nama.required' => 'Nama produk harus diisi',
@@ -74,8 +74,8 @@ class ProductController extends Controller
             'gambar.image' => 'Gambar produk harus berupa gambar',
             'gambar.mimes' => 'Gambar produk harus berupa gambar dengan format jpeg, png, jpg, gif, atau svg',
             'gambar.max' => 'Ukuran gambar produk maksimal 2 MB',
-            // 'stok.required' => 'Stok produk harus diisi',
-            // 'stok.numeric' => 'Stok produk harus berupa angka',
+            'stok.required' => 'Stok produk harus diisi',
+            'stok.numeric' => 'Stok produk harus berupa angka',
             'id_kategori.required' => 'Kategori produk harus diisi',
         ]);
 
@@ -101,7 +101,7 @@ class ProductController extends Controller
             // 'deskripsi' => $request->deskripsi,
             'harga' => $request->harga,
             'gambar' => $nama_gambar,
-            // 'stok' => $request->stok,
+            'stok' => $request->stok,
             'id_kategori' => $request->id_kategori,
         ]);
 

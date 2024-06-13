@@ -20,7 +20,7 @@ class LandingController extends Controller
             ->join('transaksi', 'detail_transaksi.id_transaksi', '=', 'transaksi.id')
             ->where('transaksi.status_pembayaran', 'paid')
             ->select('product.*', DB::raw('count(detail_transaksi.jumlah) as jumlah'))
-            ->groupBy('product.id', 'product.nama', 'product.harga', 'product.gambar', 'product.id_kategori', 'product.created_at', 'product.updated_at')
+            ->groupBy('product.id', 'product.nama', 'product.harga', 'product.stok', 'product.gambar', 'product.id_kategori', 'product.created_at', 'product.updated_at')
             ->orderBy('jumlah', 'desc')
             ->limit(5)
             ->get();

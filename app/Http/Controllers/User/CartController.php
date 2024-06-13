@@ -26,7 +26,7 @@ class CartController extends Controller
         $request->validate([
             'id_product' => 'required|exists:product,id',
             'jumlah' => 'required|integer|min:1',
-        ],[
+        ], [
             'id_product.required' => 'Produk tidak boleh kosong',
             'id_product.exists' => 'Produk tidak ditemukan',
             'jumlah.required' => 'Jumlah tidak boleh kosong',
@@ -34,6 +34,22 @@ class CartController extends Controller
             'jumlah.min' => 'Jumlah minimal 1',
 
         ]);
+
+        $stok = Product::find($request->id_product)->stok;
+
+        $jumlah_transaksi_paid = DetailTransaksi::where('id_product', $request->id_product)->whereHas('transaksi', function ($query) {
+            $query->where('status_pembayaran', 'paid');
+        })->sum('jumlah');
+
+        $jumlah_transaksi_pending = DetailTransaksi::where('id_product', $request->id_product)->whereHas('transaksi', function ($query) {
+            $query->where('status_pembayaran', 'pending');
+        })->sum('jumlah');
+
+        $jumlah_transaksi = $jumlah_transaksi_paid + $jumlah_transaksi_pending;
+
+        if ($request->jumlah > $stok - $jumlah_transaksi) {
+            return redirect()->back()->with('stoktidakcukup', 'Stok produk ' . Product::find($request->id_product)->nama . ' tidak mencukupi');
+        }
 
         $product = Product::find($request->id_product);
         $cart = Cart::where('id_user', auth()->user()->id)->where('id_product', $request->id_product)->first();
@@ -65,7 +81,7 @@ class CartController extends Controller
         $request->validate([
             'items.*.id' => 'required|exists:cart,id',
             'items.*.jumlah' => 'required|integer|min:1',
-        ],[
+        ], [
             'items.*.id.required' => 'Produk tidak boleh kosong',
             'items.*.id.exists' => 'Produk tidak ditemukan',
             'items.*.jumlah.required' => 'Jumlah tidak boleh kosong',
@@ -73,6 +89,25 @@ class CartController extends Controller
             'items.*.jumlah.min' => 'Jumlah minimal 1',
 
         ]);
+
+        // loop cek stok
+        foreach ($request->items as $item) {
+            $stok = Product::find(Cart::find($item['id'])->id_product)->stok;
+            $jumlah_transaksi_paid = DetailTransaksi::where('id_product', Cart::find($item['id'])->id_product)->whereHas('transaksi', function ($query) {
+                $query->where('status_pembayaran', 'paid');
+            })->sum('jumlah');
+
+            $jumlah_transaksi_pending = DetailTransaksi::where('id_product', Cart::find($item['id'])->id_product)->whereHas('transaksi', function ($query) {
+                $query->where('status_pembayaran', 'pending');
+            })->sum('jumlah');
+
+            $jumlah_transaksi = $jumlah_transaksi_paid + $jumlah_transaksi_pending;
+
+            if ($item['jumlah'] > $stok - $jumlah_transaksi) {
+                return redirect()->back()->with('stoktidakcukup', 'Stok produk ' . Cart::find($item['id'])->product->nama . ' tidak mencukupi');
+            }
+        }
+
 
         // Loop melalui item yang diterima dari form
         foreach ($request->items as $item) {
@@ -99,6 +134,24 @@ class CartController extends Controller
         $cart = Cart::where('id_user', auth()->user()->id)->get();
         if ($cart->count() == 0) {
             return redirect('/user/cart')->with('kosongcart', 'Keranjang kosong');
+        }
+
+        // loop cek stok
+        foreach ($cart as $c) {
+            $stok = Product::find($c->id_product)->stok;
+            $jumlah_transaksi_paid = DetailTransaksi::where('id_product', $c->id_product)->whereHas('transaksi', function ($query) {
+                $query->where('status_pembayaran', 'paid');
+            })->sum('jumlah');
+
+            $jumlah_transaksi_pending = DetailTransaksi::where('id_product', $c->id_product)->whereHas('transaksi', function ($query) {
+                $query->where('status_pembayaran', 'pending');
+            })->sum('jumlah');
+
+            $jumlah_transaksi = $jumlah_transaksi_paid + $jumlah_transaksi_pending;
+
+            if ($c->jumlah > $stok - $jumlah_transaksi) {
+                return redirect()->back()->with('stoktidakcukup', 'Stok produk ' . $c->product->nama . ' tidak mencukupi');
+            }
         }
 
         $transaksi = new Transaksi();

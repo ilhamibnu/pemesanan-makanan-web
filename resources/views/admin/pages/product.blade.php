@@ -54,7 +54,8 @@
                                     <th class="text-capitalize text-center">nama</th>
                                     <th class="text-capitalize text-center">gambar</th>
                                     <th class="text-capitalize text-center">harga</th>
-                                    {{-- <th class="text-capitalize text-center">deskripsi</th> --}}
+                                    <th class="text-capitalize text-center">stok</th>
+                                    <th class="text-capitalize text-center">sisa</th>
                                     <th class="text-capitalize text-center">kategori</th>
                                     <th class="text-capitalize text-center">action</th>
                                 </tr>
@@ -65,7 +66,27 @@
                                     <td class="text-center">{{ $item->nama }}</td>
                                     <td class="text-center"><img src="{{ asset('img/product/' . basename($item->gambar)) }}" alt="gambar" height="70px"></td>
                                     <td class="text-center">Rp. {{ number_format($item->harga, 0, ',', '.') }}</td>
-                                    {{-- <td class="text-center">{{ $item->deskripsi }}</td> --}}
+                                    <td class="text-center">{{ $item->stok }}</td>
+                                    <td class="text-center">
+                                        @php
+                                            $jumlah_transaksi_paid = DB::table('transaksi')
+                                                ->join('detail_transaksi', 'transaksi.id', '=', 'detail_transaksi.id_transaksi')
+                                                ->where('detail_transaksi.id_product', $item->id)
+                                                ->where('transaksi.status_pembayaran', 'paid')
+                                                ->count();
+
+                                            $jumlah_transaksi_pending = DB::table('transaksi')
+                                                ->join('detail_transaksi', 'transaksi.id', '=', 'detail_transaksi.id_transaksi')
+                                                ->where('detail_transaksi.id_product', $item->id)
+                                                ->where('transaksi.status_pembayaran', 'pending')
+                                                ->count();
+
+                                            $sisa = $item->stok - ($jumlah_transaksi_paid + $jumlah_transaksi_pending);
+
+                                            echo $sisa;
+
+                                        @endphp
+                                    </td>
                                     <td class="text-center">{{ $item->kategori->nama }}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
@@ -107,6 +128,11 @@
                                                         <input class="form-control" type="number" name="harga" id="harga" value="{{ $item->harga }}" required>
                                                     </div>
 
+                                                    <div class="mb-3">
+                                                        <label class="col-form-label text-capitalize" for="harga">masukkan
+                                                            stok:</label>
+                                                        <input class="form-control" type="number" name="stok" id="harga" value="{{ $item->stok }}" required>
+                                                    </div>
                                                     {{-- <div class="mb-3">
                                                         <label class="col-form-label text-capitalize" for="deskripsi">masukkan
                                                             deskripsi:</label>
@@ -199,6 +225,11 @@
                                     <label class="col-form-label text-capitalize" for="harga">masukkan
                                         harga:</label>
                                     <input class="form-control" type="number" name="harga" id="harga" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="col-form-label text-capitalize" for="harga">masukkan
+                                        stok:</label>
+                                    <input class="form-control" type="number" name="stok" id="harga" required>
                                 </div>
                                 {{-- <div class="mb-3">
                                     <label class="col-form-label text-capitalize" for="deskripsi">masukkan

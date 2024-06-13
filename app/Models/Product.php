@@ -16,7 +16,7 @@ class Product extends Model
         // 'deskripsi',
         'harga',
         'gambar',
-        // 'stok',
+        'stok',
         'id_kategori',
     ];
 
