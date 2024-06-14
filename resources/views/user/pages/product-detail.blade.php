@@ -7,11 +7,11 @@
             <div class="col-lg-7">
                 <div class="title-area-data">
                     <h2>Product Details</h2>
-                  
+
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        <a href="/"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">Shop</li>
                     <li class="breadcrumb-item active" aria-current="page">Product Details</li>

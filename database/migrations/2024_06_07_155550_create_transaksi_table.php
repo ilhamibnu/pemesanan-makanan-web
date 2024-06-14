@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('no_transaksi');
             $table->string('total_harga');
             $table->string('status_pembayaran');
+            $table->string('status_pemesanan');
+            $table->string('estimasi_pemesanan')->nullable();
             $table->string('bank');
             $table->string('no_va');
             $table->string('expired_at');

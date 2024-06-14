@@ -11,7 +11,7 @@
                 </div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        <a href="/"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">Shop</li>
                     <li class="breadcrumb-item active" aria-current="page">Shop Cart</li>
@@ -43,7 +43,9 @@
                     <thead>
                         <tr>
                             <th class="product-name">Date</th>
-                            <th class="product-name">Status Pembayarans</th>
+                            <th class="product-name">Status Pembayaran</th>
+                            <th class="product-name">Status Pemesanan</th>
+                            <th class="product-name">Estimasi Pemesanan</th>
                             <th class="product-quantity">Product</th>
                             <th class="product-subtotal">Action</th>
                         </tr>
@@ -68,6 +70,20 @@
                                 @else
                                 <span>Pembayaran Berhasil</span>
                                 @endif
+                            </td>
+                            <td>
+                                <span>{{ $item->status_pemesanan }}</span>
+                            </td>
+                            <td>
+                                <span>Estimasi Pemesanan Anda</span><br>
+                                <span>
+                                    @if ($item->estimasi_pemesanan == null)
+                                    -
+                                    @else
+                                    {{ $item->estimasi_pemesanan }}
+
+                                    @endif
+                                </span>
                             </td>
                             <td class="product-quantity">
                                 @foreach ($item->detailTransaksi as $detail)

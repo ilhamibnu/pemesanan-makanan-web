@@ -15,6 +15,8 @@ class Transaksi extends Model
         'no_transaksi',
         'total_harga',
         'status_pembayaran',
+        'status_pemesanan',
+        'estimasi_pemesanan',
         'bank',
         'no_va',
         'expired_at',

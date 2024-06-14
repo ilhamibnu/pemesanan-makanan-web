@@ -66,7 +66,7 @@ class CartController extends Controller
                 'total_harga' => $request->jumlah * $product->harga
             ]);
         }
-        return redirect('/user/cart')->with('storecart', 'Produk berhasil dimasukkan ke keranjang');
+        return redirect('/user/product/' . $request->id_product)->with('storecart', 'Produk berhasil ditambahkan ke keranjang');
     }
 
     public function update(Request $request)
@@ -158,6 +158,7 @@ class CartController extends Controller
         $transaksi->no_transaksi = 'TRX' . date('YmdHis');
         $transaksi->total_harga = $cart->sum('total_harga');
         $transaksi->status_pembayaran = 'Belum Pilih Pembayaran';
+        $transaksi->status_pemesanan = 'Menunggu Pembayaran';
         $transaksi->bank = '';
         $transaksi->no_va = '';
         $transaksi->expired_at = '';
@@ -230,6 +231,9 @@ class CartController extends Controller
                 $order->no_va = $request->va_numbers[0]['va_number'];
                 $order->expired_at = $request->expiry_time;
                 $order->status_pembayaran = 'paid';
+                $order->status_pemesanan = 'Pesanan Diproses';
+                // 10 menit setelah pembayaran sukses
+                $order->estimasi_pemesanan = date('Y-m-d H:i:s', strtotime('+10 minutes'));
                 $order->save();
             } elseif ($request->transaction_status == 'pending') {
 
@@ -238,6 +242,7 @@ class CartController extends Controller
                 $order->no_va = $request->va_numbers[0]['va_number'];
                 $order->expired_at = $request->expiry_time;
                 $order->status_pembayaran = 'pending';
+                $order->status_pemesanan = 'Menunggu Pembayaran';
                 $order->save();
             } else {
                 $order = Transaksi::where('no_transaksi', $request->order_id)->first();
@@ -245,6 +250,7 @@ class CartController extends Controller
                 $order->no_va = $request->va_numbers[0]['va_number'];
                 $order->expired_at = $request->expiry_time;
                 $order->status_pembayaran = 'expire';
+                $order->status_pemesanan = 'Pesanan Dibatalkan';
                 $order->save();
             }
         }

@@ -32,6 +32,22 @@
                     <a href="" data-bs-toggle="modal" data-bs-target="#Add" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="card-body">
+                    @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+                        <?php
+
+                                $nomer = 1;
+
+                                ?>
+
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $nomer++ }}. {{ $error }}</li>
+                        @endforeach
+                    </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="display" id="test">
                             <thead>
