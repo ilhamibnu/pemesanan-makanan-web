@@ -58,7 +58,37 @@
 
 
                     </form>
-                    {{-- // end filter date and status --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- // end filter date and status --}}
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Data Report</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                    <li class="breadcrumb-item active">Data Report</li>
+                </ol>
+            </div>
+            <div class="col-lg-6">
+                <!-- Bookmark Start-->
+                <div class="bookmark">
+
+                </div>
+                <!-- Bookmark Ends-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
 
                     @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show mt-2">
@@ -168,11 +198,298 @@
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Data Rekap Pendapatan</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                    <li class="breadcrumb-item active">Data Report</li>
+                </ol>
+            </div>
+            <div class="col-lg-6">
+                <!-- Bookmark Start-->
+                <div class="bookmark">
+
+                </div>
+                <!-- Bookmark Ends-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+                        <?php
+
+                                $nomer = 1;
+
+                                ?>
+
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $nomer++ }}. {{ $error }}</li>
+                        @endforeach
+                    </div>
+                    @endif
+                    <div class="table-responsive">
+                        <table class="display" id="test2">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($total as $index => $data2)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($data2->date)) }}</td>
+                                    <td>
+                                        <span>Rp. {{ number_format($data2->total_revenue) }}</span>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Data Rekap Transaksi Per Menu / Product</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                    <li class="breadcrumb-item active">Data Report</li>
+                </ol>
+            </div>
+            <div class="col-lg-6">
+                <!-- Bookmark Start-->
+                <div class="bookmark">
+
+                </div>
+                <!-- Bookmark Ends-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+
+                        <?php
+
+                                $nomer = 1;
+
+                                ?>
+
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $nomer++ }}. {{ $error }}</li>
+                        @endforeach
+                    </div>
+                    @endif
+                    <div class="table-responsive">
+                        <table class="display" id="test3">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Product</th>
+                                    <th>Jumlah</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($result as $index => $data)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $data['name'] }}</td>
+                                    <td>{{ $data['total_sold'] }}</td>
+                                    <td>
+                                        <span>Rp. {{ number_format($data['total_revenue']) }}</span>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
 <script>
     $('#test').DataTable({
+        autoWidth: true,
+        // "lengthMenu": [
+        //     [16, 32, 64, -1],
+        //     [16, 32, 64, "All"]
+        // ]
+        dom: 'Bfrtip',
+
+
+        lengthMenu: [
+            [10, 25, 50, -1]
+            , ['10 rows', '25 rows', '50 rows', 'Show all']
+        ],
+
+        buttons: [{
+                extend: 'colvis'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , text: 'Column Visibility',
+                // columns: ':gt(0)'
+
+
+            },
+
+            {
+
+                extend: 'pageLength'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , text: 'Page Length',
+                // columns: ':gt(0)'
+            },
+
+
+            // 'colvis', 'pageLength',
+
+            {
+                extend: 'excel'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            // {
+            //     extend: 'csv',
+            //     className: 'btn btn-primary btn-sm',
+            //     exportOptions: {
+            //         columns: [0, ':visible']
+            //     }
+            // },
+            {
+                extend: 'pdf'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            {
+                extend: 'print'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            // 'pageLength', 'colvis',
+            // 'copy', 'csv', 'excel', 'print'
+
+        ]
+    , });
+
+</script>
+<script>
+    $('#test2').DataTable({
+        autoWidth: true,
+        // "lengthMenu": [
+        //     [16, 32, 64, -1],
+        //     [16, 32, 64, "All"]
+        // ]
+        dom: 'Bfrtip',
+
+
+        lengthMenu: [
+            [10, 25, 50, -1]
+            , ['10 rows', '25 rows', '50 rows', 'Show all']
+        ],
+
+        buttons: [{
+                extend: 'colvis'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , text: 'Column Visibility',
+                // columns: ':gt(0)'
+
+
+            },
+
+            {
+
+                extend: 'pageLength'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , text: 'Page Length',
+                // columns: ':gt(0)'
+            },
+
+
+            // 'colvis', 'pageLength',
+
+            {
+                extend: 'excel'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            // {
+            //     extend: 'csv',
+            //     className: 'btn btn-primary btn-sm',
+            //     exportOptions: {
+            //         columns: [0, ':visible']
+            //     }
+            // },
+            {
+                extend: 'pdf'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            {
+                extend: 'print'
+                , className: 'btn btn-primary shadow btn-xs sharp mr-1'
+                , exportOptions: {
+                    columns: [0, ':visible']
+                }
+            },
+
+            // 'pageLength', 'colvis',
+            // 'copy', 'csv', 'excel', 'print'
+
+        ]
+    , });
+
+</script>
+<script>
+    $('#test3').DataTable({
         autoWidth: true,
         // "lengthMenu": [
         //     [16, 32, 64, -1],
